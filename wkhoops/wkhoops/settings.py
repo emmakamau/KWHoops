@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'services',
     'subscriptions',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'storages'
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
