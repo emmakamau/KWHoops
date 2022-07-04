@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
 from authentication.serializers import RegisterSerializer
-from rest_framework import response
+from rest_framework import response, status
+
+
 class RegisterAPIView(GenericAPIView):
     
     serializer_class = RegisterSerializer
@@ -11,5 +13,6 @@ class RegisterAPIView(GenericAPIView):
 
         if serializer.is_valid():
             serializer.save()
-            return response.Response
+            return response.Response(serializer.data, status=status.HTTP_201_CREATED )
+        return response.Response(serializer.data, status=status.HTTP_400_BAD_REQUEST )
 
