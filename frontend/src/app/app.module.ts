@@ -10,15 +10,15 @@ import { AngularEmbedVideoModule } from 'angular-embed-video';
 import { SafePipe } from './safe.pipe';
 
 
+import { UserAuthenticationComponent } from './user-authentication/user-authentication.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     YogaComponent,
     WorkoutsComponent,
-    SafePipe,
-  
-   
+    SafePipe,   
+    UserAuthenticationComponent
   ],
   imports: [
     BrowserModule,
