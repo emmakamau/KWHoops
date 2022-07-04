@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
-# Create your views here.
+from authentication.serializers import RegisterSerializer
 
 class RegisterAPIView(GenericAPIView):
-    pass
+    
+    serializer_class = RegisterSerializer
+    
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+
