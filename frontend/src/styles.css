@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Global CSS */
+
+
+/* CSS for SignUp and Sign In Page */
+
+.reg-page{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.welcome-title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.welcome-text{
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+.forgot-password{
+    color: #000000;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.auth-button{
+    border-radius: 20px;
+    border: 1px solid #e80000;
+    background-color: #e80000;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.auth-button:active {
+    transform: scale(0.95);
+}
+
+.auth-button:focus {
+    outline: none;
+}
+
+.auth-button .overlay-btn {
+    background-color: transparent;
+    border-color: #ffffff;
+}
+
+.reg-form{
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.reg-inputs{
+    background-color: #faf9f6;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}

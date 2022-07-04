@@ -1,30 +1,46 @@
-<div class="container" id="container">
+<div class="container reg-page" id="container">
     <div class="form-container sign-up-container">
         <!-- Sign Up form -->
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form action="#" class="reg-form">
                 <h1>Create Account</h1>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <input type="password" placeholder="Confirm Password" />
-                <button>Sign Up</button>
+                <input class="reg-inputs" type="text" placeholder="Name" />
+                <input class="reg-inputs" type="email" placeholder="Email" />
+                <input class="reg-inputs" type="password" placeholder="Password" />
+                <input class="reg-inputs" type="password" placeholder="Confirm Password" />
+                <button class="auth-button">Sign Up</button>
             </form>
         </div>
     </div>
     <div class="form-container sign-in-container">
         <!-- Sign In form -->
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="#" class="reg-form">
                 <h1>Sign in</h1>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <input class="reg-inputs" type="email" placeholder="Email" />
+                <input class="reg-inputs" type="password" placeholder="Password" />
+                <a class="forgot-password" href="#">Forgot your password?</a>
+                <button class="auth-button">Sign In</button>
             </form>
         </div>
     </div>
     <div class="overlay-container">
-        <!-- The overlay code goes here -->
+        <!-- The overlay -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="welcome-title">Welcome Back!</h1>
+                    <p class="welcome-text">
+                        To be connected with us please login with your personal info
+                    </p>
+                    <button class="overlay-btn" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="welcome-title">Hello, Friend!</h1>
+                    <p class="welcome-text">Enter your personal details and start journey with us</p>
+                    <button class="overlay-btn" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
