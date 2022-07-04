@@ -25,9 +25,10 @@ SECRET_KEY = 'i11l1lgi&$0*qt_977aqcd+ce=#$g#t+hw7=sm9&2z36*1a-n-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-AUTH_USER_MODEL ='authentication.User'
-
 ALLOWED_HOSTS = []
+
+AUTH_USER_MODEL="authentication.User"
+
 
 
 # Application definition
