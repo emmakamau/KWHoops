@@ -1,0 +1,40 @@
+h1{
+    color: #F80000;
+    font-family:cursive;
+}
+ .one{
+margin-left: 200px;
+width: 300px;
+ }
+ .two{
+    width: 300px;
+    height:300px;
+    margin-top:50px;
+  
+ }
+ li{
+    font-size: small;
+ }
+
+ video{
+    margin-left: 35px;
+ }
+ h4{
+    margin-left: 35px;
+ }
+
+ .red-div{
+   background-color: #F80000;
+   height: 150px;
+   position: relative;
+   margin-top: 150px;
+ }
+
+ .body{
+   display: flex;
+   position: absolute;
+ }
+
+ .row2{
+   margin-top: 370px;
+ }

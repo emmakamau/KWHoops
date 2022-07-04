@@ -3,10 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { YogaComponent } from './yoga/yoga.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    YogaComponent,
+  
+   
   ],
   imports: [
     BrowserModule,
