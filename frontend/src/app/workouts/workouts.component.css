@@ -1,0 +1,17 @@
+h1{
+    color: #F80000;
+    font-family:cursive;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 40px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

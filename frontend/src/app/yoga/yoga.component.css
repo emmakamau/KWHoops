@@ -3,12 +3,13 @@ h1{
     font-family:cursive;
 }
  .one{
-margin-left: 200px;
-width: 300px;
+margin-left: 100px;
+width: 500px;
+height:600px;
  }
  .two{
-    width: 300px;
-    height:300px;
+    width: 500px;
+    height:30px;
     margin-top:50px;
   
  }
@@ -25,9 +26,9 @@ width: 300px;
 
  .red-div{
    background-color: #F80000;
-   height: 150px;
+   height: 200px;
    position: relative;
-   margin-top: 150px;
+   margin-top: 120px;
  }
 
  .body{
@@ -36,5 +37,5 @@ width: 300px;
  }
 
  .row2{
-   margin-top: 370px;
+   margin-top: 320px;
  }
