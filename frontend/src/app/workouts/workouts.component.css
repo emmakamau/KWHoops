@@ -3,15 +3,25 @@ h1{
     font-family:cursive;
 }
 
-.column {
+.col-md-4 {
     float: left;
     width: 33.33%;
     padding: 40px;
   }
-  
+  .col-md-8 {
+    float: left;
+    width: 33.33%;
+    padding: 40px;
+  }
   /* Clear floats after image containers */
   .row::after {
     content: "";
     clear: both;
     display: table;
+  }
+  .wrapper {
+    /* text-align: center;
+    display: inline-block;
+    position: absolute; */
+    margin-left: 15%;
   }
