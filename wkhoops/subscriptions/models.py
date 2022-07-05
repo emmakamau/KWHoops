@@ -11,3 +11,8 @@ class Subscription_Plan(models.Model):
 
     def save_subsription_plan(self):
         self.save() 
+
+
+class Subscription(models.Model):
+    sub_plan_id = models.OneToOneField(Subscription_Plan, primary_key=True, on_delete=models.CASCADE)
+    sub_paid = models.BooleanField()
