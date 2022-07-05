@@ -17,6 +17,12 @@ class MyUserManager(UserManager):
         user.set_password(password)
         user.save()
         return user
+
+    
+    def create_user(self, username, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', False)
+        extra_fields.setdefault('is_superuser', False)
+        return self._create_user(username, email, password, **extra_fields)
        
 
     def create_superuser(self, username, email, password):
@@ -28,7 +34,6 @@ class MyUserManager(UserManager):
       user.is_superuser = True
       user.is_staff = True
       user.save()
-
       return user
 
 
@@ -37,17 +42,13 @@ class User(AbstractBaseUser, PermissionsMixin,TrackingModel):
     username_validator = UnicodeUsernameValidator()
 
     username = models.CharField(
-        ('username'),
-        max_length=150,
-        unique=True,
+        ('username'),max_length=150, unique=True,
         help_text=('Required. 150 characters or fewer.'),
         validators=[username_validator],
-        error_messages={
-            'unique': ("A user with that username already exists."),
+        error_messages={'unique': ("A user with that username already exists."),
         },
     )
-    first_name = models.CharField(('first name'), max_length=150, blank=True)
-    last_name = models.CharField(('last name'), max_length=150, blank=False )
+    
     email = models.EmailField(('email address'), blank=True, unique=True)
     is_staff = models.BooleanField(
         ('staff status'),
