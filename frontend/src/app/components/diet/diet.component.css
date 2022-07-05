@@ -39,8 +39,22 @@
   /* Style the counter cards */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 100px;
+    padding: 50px;
     text-align: center;
     color: white;
     background-color: orangered;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  } 
+
+  #top-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
