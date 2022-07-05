@@ -3,7 +3,7 @@ from helpers.models import TrackingModel
 from django.contrib.auth.models import PermissionsMixin,AbstractBaseUser,UserManager
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.utils import timezone
-
+import jwt
 class MyUserManager(UserManager):
     def create_user(self, username, email, password=None):
         
@@ -48,7 +48,7 @@ class User(AbstractBaseUser, PermissionsMixin,TrackingModel):
         error_messages={'unique': ("A user with that username already exists."),
         },
     )
-    
+
     email = models.EmailField(('email address'), blank=True, unique=True)
     is_staff = models.BooleanField(
         ('staff status'),
