@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { YogaComponent } from './yoga/yoga.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { RouterModule } from '@angular/router';
+import { AngularEmbedVideoModule } from 'angular-embed-video';
+
 
 
 @NgModule({
@@ -19,10 +21,13 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularEmbedVideoModule,
     RouterModule.forRoot([
       {path: '', component: YogaComponent},
       {path: 'workouts', component: WorkoutsComponent},
     ]),
+
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
