@@ -3,12 +3,12 @@ from django.db import models
 # Create your models here.
 class Services(models.Model):
     CATEGORY=(
-        ('Trainings'),
-        ('Yoga'),
-        ('Workouts'),
-        ('Diet'),
-        ('Bootcamp'),
-        ('Tournament'),
+        ('Trainings','Trainings'),
+        ('Yoga','Yoga'),
+        ('Workouts','Workouts'),
+        ('Diet','Diet'),
+        ('Bootcamp','Bootcamp'),
+        ('Tournament','Tournament'),
     )
 
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
