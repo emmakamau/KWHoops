@@ -5,8 +5,8 @@ from django.urls import path,include
 
 router = DefaultRouter()
 
-routers.register('services',ServicesViewSet)
-routers.register('category',CategoryViewSet)
+router.register('services',ServicesViewSet)
+router.register('category',CategoryViewSet)
 
 urlpatterns= [
     path('api/',include(router.urls))

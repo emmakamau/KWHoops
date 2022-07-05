@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,8 +43,16 @@ INSTALLED_APPS = [
     'authentication',
     'services',
     'subscriptions',
-    'rest_framework'
+    'rest_framework',
+    'cloudinary',
+    
 ]
+
+cloudinary.config(
+  cloud_name = "frish",
+  api_key = "985318655831563",
+  api_secret = "-JjIiZ6O3MZcN8ldjI6eirSHhOM",
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,3 +137,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
