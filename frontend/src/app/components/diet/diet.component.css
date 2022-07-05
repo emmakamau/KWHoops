@@ -1,20 +1,43 @@
+
+
 * {
     box-sizing: border-box;
   }
   
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FAF6F9;
+    font-family: 'Lato', sans-serif;
   }
 
   #plans-header {
     text-align: center;
+    padding: 5px;
+    font-size: 70px;
+    font-weight: 400;
+  }
+
+  #diet-header {
+    color: #E80000;
+    font-size: 80px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 800;
+  }
+
+  #paragraph-header {
+    font-weight: 600;
+    font-size: 60px;
+    padding-top: 10px;
+  }
+
+  .paragraph-details {
+    font-size: large;
   }
   
   /* Float four columns side by side */
   .column {
     float: left;
     width: 32%;
-    padding: 0 10px;
+    padding: 0 25px;
   }
   
   /* Remove extra left and right margins, due to padding */
@@ -25,6 +48,10 @@
     content: "";
     display: table;
     clear: both;
+  }
+
+  #plans-container {
+    padding: 20px;
   }
   
   /* Responsive columns */
@@ -40,9 +67,11 @@
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 50px;
+    height: 300px;
+    font-family: 'Lato', sans-serif;
     text-align: center;
-    color: white;
-    background-color: orangered;
+    color: #FFFFFF;
+    background-color: #E80000;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   } 
@@ -50,11 +79,23 @@
   #top-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 25px;
+    height: 180px;
     text-align: center;
     color: white;
-    background-color: black;
+    background-image: url("/assets/images/dietbckg.jpg");
+    opacity: 0.6;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 5px;
     border-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
+
+  #diet-image {
+    width: 960px;
+    height: 400px;
+    float: left;
+  }
+
+  

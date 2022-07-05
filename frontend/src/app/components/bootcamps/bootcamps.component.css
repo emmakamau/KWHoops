@@ -1,0 +1,94 @@
+
+body {
+    background-color: #faf6f9;
+    font-family: 'Lato', sans-serif;}
+
+h1,h2 {
+    text-align: center;
+}
+
+h2, h3, h4 {
+    color: #E80000;
+}
+
+#camp-header {
+    font-size: 50px;
+    color: #E80000;
+}
+
+.card {
+    background-color: #E80000;
+    border-radius: 10px;
+    color: whitesmoke;
+    width: fit-content;
+    padding: 20px;
+    line-height: 1.7; 
+    float: right;
+}
+
+#camp-card {
+    background-color: #faf6f9;
+    color: black;
+    border-radius: 10px;
+    width: 550px;
+    padding: 20px;
+    margin-left: 0;
+    line-height: 1.7;
+    float: left;
+}
+
+#camp-card a {
+    color: black;
+}
+
+.card a {
+    color: #faf6f9;
+}
+
+#enrollBtn{
+    background-color: #faf6f9;
+    color: #E80000;
+    width: 150px;
+    border-radius: 25px;
+    height: fit-content;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    
+}
+
+#enrollBtn:hover{
+    background-color: #E80000;
+    color: #FFFFFF;
+}
+
+
+#camp-image {
+    width: 550px;
+    height: 600px;
+    border-radius: 25px;
+}
+
+#camp-container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#teen-image1 {
+    width: 200px;
+    height: 250px;
+    border-radius: 35px;
+    padding: 20px;
+    margin-left: 110px;
+    margin-top: 0 ;
+}
+
+#teen-image2 {
+    width: 200px;
+    height: 250px;
+    border-radius: 35px;
+    padding: 20px;
+    margin-top: 100px;
+}
+

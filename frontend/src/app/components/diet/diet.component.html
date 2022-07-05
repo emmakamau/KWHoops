@@ -10,63 +10,68 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lato&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- Main header -->
-    <h1>Diet</h1>
+    <div class="container-fluid">
+        <h1 class="text-center" id="diet-header" >Diet</h1>
 
-    <!-- Introduction -->
-    <h2>Transforming your body with diet</h2>
-    <p>Nutrition plays a central role in transforming your body - whether that's shedding fat or building muscle.</p>
-    <p>When it comes to constructing a diet that will support your body transformation goals, optimise your performance in the gym, help your recovery and create the best conditions for fat loss and muscle growth, there are a number of key foods that we suggest to many of our clients.</p>
-    <p>Please check available diet plans below:-</p>
+        <!-- Create diet image -->
+        <img id="diet-image" class="img-responsive" src ="./assets/images/eat-right-image-removebg-preview.png" alt=" image">
 
-    <!-- Create diet image -->
-    <img class="img-responsive" [src] ="'/frontend/src/assets/images/eatRightImage.jpg'" alt=" image">
+        <!-- Introduction -->
+        <h2 id="paragraph-header" >Transforming your body with diet</h2>
+        <p class="paragraph-details" >Nutrition plays a central role in transforming your body - whether that's shedding fat or building muscle.</p>
+        <p class="paragraph-details" >When it comes to constructing a diet that will support your body transformation goals, optimise your performance in the gym, help your recovery and create the best conditions for fat loss and muscle growth, there are a number of key foods that we suggest to many of our clients.</p>
+        <p class="paragraph-details" > <em> <strong>Please check available diet plans below:-</strong></em></p>  
+    </div><br>
 
-    <!-- Diet plans -->
-    <h2 id="plans-header" >DIET PLANS</h2>
-    <div class="row">
-        <div  style="margin-left: 30px;" class="column">
-            <div class="card" id="top-card" >
-                <h3>Begginner</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-            </div>
-          <div class="card">
-            <h3>Begginner</h3>
-            <p>Some text</p>
-            <p>Some text</p>
-          </div>
-        </div>
+   <br>
+    <div class="container-fluid" id="plans-container">
+      <div class="container-fluid">
+        <h2 id="plans-header" class="text-center" >Diet Plans</h2>
+          <div class="row">
+              <div  style="margin-left: 30px;" class="column">
+                  <div class="card" id="top-card" >
+                  </div>
+                <div class="card">
+                  <h2>Vegeterian Package</h2><br><br><br>
+                  <h3>7-Day Meal Plan</h3> <br>
+                  <a href=""><h3>See More</h3></a>
+                </div>
+              </div>
+            
+              <div class="column">
+                  <div class="card" id="top-card" >
+                  </div>
+
+                  <div class="card">
+                    <h2>Vegan/Plant-based Package</h2><br>
+                    <h3>7-Day Meal Plan</h3> <br>
+                    <a href=""><h3>See More</h3></a>
+                  </div>
+              </div>
+              
+              <div class="column">
+                  <div class="card" id="top-card" >
+                  </div>
+
+                  <div class="card">
+                    <h2>Non-Vegeterian Package</h2><br>
+                    <h3>7-Day Meal Plan</h3> <br>
+                    <a href=""><h3>See More</h3></a>
+                  </div>
+              </div>
       
-        <div class="column">
-            <div class="card" id="top-card" >
-                <h3>Begginner</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-            </div>
-          <div class="card">
-            <h3>Intermediate</h3>
-            <p>Some text</p>
-            <p>Some text</p>
-          </div>
-        </div>
-        
-        <div class="column">
-            <div class="card" id="top-card" >
-                <h3>Begginner</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-            </div>
-          <div class="card">
-            <h3>Advanced</h3>
-            <p>Some text</p>
-            <p>Some text</p>
-          </div>
-        </div>
-
+          </div> 
       </div>
+    </div>
+    <!-- Diet plans -->
+    
+    
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
