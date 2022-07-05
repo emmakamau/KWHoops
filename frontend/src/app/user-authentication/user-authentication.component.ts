@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserAuthenticationService } from 'src/app/user-authentication.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 declare var loadExtJS: any;
 
@@ -9,10 +11,15 @@ declare var loadExtJS: any;
 })
 export class UserAuthenticationComponent implements OnInit {
 
-  constructor() { }
+  public userSignInForm: FormGroup
+
+  constructor(
+    private service:UserAuthenticationService) { }
+
 
   ngOnInit(): void {
     new loadExtJS();
-  }
 
+    
+  }
 }
