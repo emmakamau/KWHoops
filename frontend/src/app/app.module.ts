@@ -11,6 +11,10 @@ import { SafePipe } from './safe.pipe';
 
 
 import { UserAuthenticationComponent } from './user-authentication/user-authentication.component';
+import { UserAuthenticationService } from './user-authentication.service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,9 @@ import { UserAuthenticationComponent } from './user-authentication/user-authenti
     ]),
 
   
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
