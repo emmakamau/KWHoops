@@ -2,7 +2,7 @@ from dataclasses import field
 from rest_framework import serializers
 from authentication.models import User
 
-class RegisterSerializer(serializers.model.serializer):
+class RegisterSerializer(serializers.ModelSerializer):
 
     password =serializers.CharField(max_length=125, min_length =6, write_only=True)
     class Meta:
