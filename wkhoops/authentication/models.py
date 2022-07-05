@@ -32,8 +32,6 @@ class MyUserManager(UserManager):
       return user
 
 
-
-
 class User(AbstractBaseUser, PermissionsMixin,TrackingModel):
 
     username_validator = UnicodeUsernameValidator()
@@ -42,7 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin,TrackingModel):
         ('username'),
         max_length=150,
         unique=True,
-        help_text=('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        help_text=('Required. 150 characters or fewer.'),
         validators=[username_validator],
         error_messages={
             'unique': ("A user with that username already exists."),
@@ -54,14 +52,14 @@ class User(AbstractBaseUser, PermissionsMixin,TrackingModel):
     is_staff = models.BooleanField(
         ('staff status'),
         default=False,
-        help_text=('Designates whether the user can log into this admin site.'),
+        help_text=('Confirm whether the user can log into this admin site.'),
     )
     is_active = models.BooleanField(
         ('active'),
         default=True,
         help_text=(
-            'Designates whether this user should be treated as active. '
-            'Unselect this instead of deleting accounts.'
+            'confirm whether this user should be treated as active. '
+            
         ),
     )
     date_joined = models.DateTimeField(('date joined'), default=timezone.now)
