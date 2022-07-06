@@ -1,4 +1,5 @@
 from django.db import models
+from authentication.models import User
 
 # Create your models here.
 
@@ -14,5 +15,6 @@ class Subscription_Plan(models.Model):
 
 
 class Subscription(models.Model):
-    sub_plan_id = models.OneToOneField(Subscription_Plan, primary_key=True, on_delete=models.CASCADE)
+    sub_plan_id = models.ForeignKey(Subscription_Plan, on_delete=models.CASCADE)
     sub_paid = models.BooleanField()
+    user_id = models.OneToOneField(User,related_name='subscription', on_delete=models.CASCADE)
