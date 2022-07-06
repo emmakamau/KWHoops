@@ -3,28 +3,11 @@ h1{
     font-family:cursive;
 }
 
-.col-md-4 {
+.iframe{
     float: left;
-    width: 33.33%;
-    padding: 40px;
+    margin:1em;
   }
-  .col-md-8 {
-    float: left;
-    width: 33.33%;
-    padding: 40px;
-  }
-  /* Clear floats after image containers */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  .wrapper {
-    /* text-align: center;
-    display: inline-block;
-    position: absolute; */
-    margin-left: 15%;
-  }
+ 
   .btn{
     margin-left: 1%;
   }

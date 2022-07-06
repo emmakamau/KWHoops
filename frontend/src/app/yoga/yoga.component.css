@@ -1,43 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+.body{
+   display: flex;
+   /* align-items: center; */
+   justify-content: center;
+
+   /* border: #000 1px solid; */
+   margin: 1em;
+
+ }
+
+ .main-image{
+   margin: 2em;
+   /* border: #000 1px solid; */
+
+ }
+
+ .side-image{
+   margin: 5em;
+   /* border: #000 1px solid; */
+ }
 
 h1{
     color: #F80000;
     font-family:cursive;
 }
  .one{
-margin-left: 100px;
-width: 500px;
-height:600px;
+   display: flex;
  }
- .two{
-    width: 500px;
-    height:350px;
-    margin-top:50px;
-  
- }
+ 
  li{
     font-size: small;
+    /* border: #F80000 1px solid; */
  }
+ .column{
+  float: left;
+  margin:1em;
+}
 
- iframe{
-    margin-left: 35px;
- }
- h4{
-    margin-left: 35px;
- }
-
- .red-div{
-   background-color: #F80000;
-   height: 200px;
-   position: relative;
-   margin-top: 120px;
- }
-
- .body{
-   display: flex;
-   position: absolute;
- }
-
- .row2{
-   margin-top: 320px;
- }
