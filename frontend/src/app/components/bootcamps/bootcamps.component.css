@@ -1,10 +1,13 @@
 
 body {
     background-color: #faf6f9;
-    font-family: 'Lato', sans-serif;}
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+    
 
 #camp-header {
-    font-size: 55px;
+    font-size: 3.3rem;
     font-weight: 500;
     font-family: 'Dancing Script', cursive;
     text-align: center;
@@ -18,7 +21,7 @@ body {
     border-radius: 10px;
     width: 100%;
     padding: 20px;
-    margin-left: 3%;
+    margin-left: 1%;
     line-height: 1.7;
     float: left;
     border: 0;
@@ -28,8 +31,15 @@ body {
     width: 100%;
     height: 960px;
     border-radius: 35px;
-    margin-left: 6%;
 }
+
+@media screen and (max-width: 600px) {
+    .responsive {
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  }
 
 #camp-card a {
     color: black;
@@ -50,19 +60,17 @@ body {
 }
 
 #teen-image1 {
-    width: 300px;
+    width: 49%;
     height: 300px;
     border-radius: 35px;
     float: left;
-    margin-left: 4%;
     margin-top: 18%;
 }
 
 #teen-image2 {
-    width: 300px;
+    width: 49%;
     height: 300px;
     border-radius: 35px;
-    margin-right: 6%;
     margin-bottom: 18%;
     float: right;
 }
@@ -70,9 +78,8 @@ body {
 #enroll-header {
     color: #E80000;
     font-family: 'Dancing Script', cursive;
-    font-size: 70px;
+    font-size: 3.3rem;
     font-weight: 600;
-    margin-left: 24%;
     text-align: justify;
     -moz-text-align-last: center; /* For Firefox prior 58.0 */
     text-align-last: center;
@@ -87,23 +94,20 @@ a:hover{
 
 #enroll-date {
     color: black;
-    font-size: 50px;
+    font-size: 45px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
-    margin-left: 25%;
 }
 
 #enrollBtn{
     background-color: black;
     color: #FFFFFF;
-    width: 280px;
+    width: 40%;
     border-radius: 35px;
     height: fit-content;
     font-size: 35px;
     font-weight: 700;
-    text-align: center;
-    margin-left: 25%;
-  
+    text-align: center;  
 }
 
 #enrollBtn:hover{

@@ -61,6 +61,11 @@
       display: block;
       margin-bottom: 20px;
     }
+
+    .responsive {
+      width: 100%;
+      height: auto;
+    }
   }
   
   /* Style the counter cards */
@@ -93,7 +98,7 @@
   }
 
   #diet-image {
-    width: 960px;
+    width: 65%;
     height: 400px;
     float: left;
   }
