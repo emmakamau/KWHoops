@@ -43,10 +43,9 @@
     <div lass="row"  *ngFor="let workout of workouts">
         <div class="col-md-4">
           <p>{{workout.category}}</p>
-          <p>{{workout.video}}</p>
-          <video width="256px">
-              <source [src]="workout.video" type="video/mp4">
-              Sorry, your browser doesn't support embedded videos.
+          <!-- <p>{{workout.video}}</p> -->
+          <video width="320" height="240" [src]="workout.video" type="video/mp4">
+            {{workout.video}}
           </video> 
           <!-- <iframe class="one" width="320" height="240" src="https://www.youtube.com/embed/teqk-UDPCrc" title="The 15 Minute-Per-Day Basketball Workout (FULL BREAKDOWN)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
           </div>
