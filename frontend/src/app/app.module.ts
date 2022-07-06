@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DietComponent } from './components/diet/diet.component';
 import { BootcampsComponent } from './components/bootcamps/bootcamps.component';
+import { VeganComponent } from './components/vegan/vegan.component';
+import { VegeterianComponent } from './components/vegeterian/vegeterian.component';
+import { NonVegeterianComponent } from './components/non-vegeterian/non-vegeterian.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DietComponent,
-    BootcampsComponent
+    BootcampsComponent,
+    VeganComponent,
+    VegeterianComponent,
+    NonVegeterianComponent
   ],
   imports: [
     BrowserModule,

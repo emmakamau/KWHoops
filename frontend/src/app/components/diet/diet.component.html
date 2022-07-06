@@ -17,7 +17,7 @@
 
   <body>
     <!-- Main header -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="diet-container" >
         <h1 class="text-center" id="diet-header" >Healthy Diets</h1>
 
         <!-- Create diet image -->
@@ -34,6 +34,7 @@
 
     <!-- Dietary plans for different users -->
     <br>
+    <hr>
     <div class="container-fluid" id="plans-container">
       <div class="container-fluid">
         <h2 id="plans-header" class="text-center" >Diet Plans</h2>
@@ -42,9 +43,9 @@
                 <div class="card" id="top-card" >
                 </div>
                 <div class="card">
-                  <h2>Vegeterian <br> Package</h2><br>
+                  <h2>Vegetarian <br> Package</h2><br>
                   <h3>7-Day Meal Plan</h3> 
-                  <a href=""><h3>See More</h3></a>
+                  <a routerLink="/vegetarian"><h3>See More</h3></a>
                 </div>
               </div>
             
@@ -54,7 +55,7 @@
                 <div class="card">
                   <h2>Vegan <br> Package</h2><br>
                   <h3>7-Day Meal Plan</h3> 
-                  <a href=""><h3>See More</h3></a>
+                  <a  routerLink="/vegan"><h3>See More</h3></a>
                 </div>
               </div>
               
@@ -62,16 +63,15 @@
                 <div class="card" id="top-card" >
                 </div>
                 <div class="card">
-                  <h2>Non-Vegeterian Package</h2><br>
+                  <h2>Non-Vegetarian Package</h2><br>
                   <h3>7-Day Meal Plan</h3>
-                  <a href=""><h3>See More</h3></a>
+                  <a routerLink="/non-vegetarian"><h3>See More</h3></a>
                 </div>
               </div>
       
           </div> 
       </div>
     </div>    
-      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
