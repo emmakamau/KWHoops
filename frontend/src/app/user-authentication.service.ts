@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
 
+const httpOptions = { 
+  headers: new HttpHeaders({
+    'Content-Type':'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +16,11 @@ export class UserAuthenticationService {
 
   constructor(private http:HttpClient) { }
 
-  signInUser(){
-    return this.http.get<any>(this.APIUrl + '/api/auth/login/');
+  registerUser(userData): Observable<any>{
+    return this.http.post(this.APIUrl+'/api/auth/register/',userData)
+  }
+
+  loginUser(userData): Observable<any>{
+    return this.http.post(this.APIUrl+'/api/auth/login/',userData)
   }
 }
