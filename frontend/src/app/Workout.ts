@@ -8,4 +8,5 @@
     Balance="Balance",
     Strength="Strength",
     Endurance="Endurance",
+    Flexibility="Flexibility",
  }

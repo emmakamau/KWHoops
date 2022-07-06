@@ -7,6 +7,7 @@ import { YogaComponent } from './yoga/yoga.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { RouterModule } from '@angular/router';
 import { AngularEmbedVideoModule } from 'angular-embed-video';
+import { SafePipe } from './safe.pipe';
 
 
 
@@ -15,6 +16,7 @@ import { AngularEmbedVideoModule } from 'angular-embed-video';
     AppComponent,
     YogaComponent,
     WorkoutsComponent,
+    SafePipe,
   
    
   ],
