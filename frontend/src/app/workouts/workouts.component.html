@@ -34,29 +34,37 @@
     <div class="wrapper">
       <button class="btn btn-info" id="all" (click)="Testing()">All</button>
 
-      <button class="btn btn-info">Endurance</button>
-      <button class="btn btn-info">Strength</button>
-      <button class="btn btn-info">Balance</button>
+      <button  (click)="onEndurance()" class="btn btn-info">Endurance</button>
+      <button (click)="onStrength()" class="btn btn-info">Strength</button>
+      <button  (click)="onBalance()" class="btn btn-info">Balance</button>
       <button class="btn btn-info">Flexibility</button>
 
     </div>
-    <div lass="row">
+    <div lass="row"  *ngFor="let workout of workouts">
         <div class="col-md-4">
-          <iframe class="one" width="320" height="240" src="https://www.youtube.com/embed/8_4NFOSxTDE" title="The 15 Minute-Per-Day Basketball Workout (FULL BREAKDOWN)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p>{{workout.category}}</p>
+          <p>{{workout.video}}</p>
+          <video width="256px">
+              <source [src]="workout.video" type="video/mp4">
+              Sorry, your browser doesn't support embedded videos.
+          </video> 
+          <!-- <iframe class="one" width="320" height="240" src="https://www.youtube.com/embed/teqk-UDPCrc" title="The 15 Minute-Per-Day Basketball Workout (FULL BREAKDOWN)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+          </div>
+        </div>
           <!-- </div>
           <div class="column"> -->
-            <iframe width="320" height="240" src="https://www.youtube.com/embed/teqk-UDPCrc" title="10 Minute At-Home Dribbling Workout (Follow Along)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <iframe width="320" height="240" src="https://www.youtube.com/embed/teqk-UDPCrc" title="10 Minute At-Home Dribbling Workout (Follow Along)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
           <!-- </div> -->
           <!-- <div class="column"> -->
-            <iframe width="320" height="240" src="https://www.youtube.com/embed/LUz0LeY7Dfs" title="FOOTWORK and QUICKNESS DRILLS for Basketball | ladder and Cone drills" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        <div class="col-md-4">
-          <iframe width="320" height="240" src="https://www.youtube.com/embed/Zix5EP74jTs" title="The 10 Minute Ball Handling Workout" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <iframe width="320" height="240" src="https://www.youtube.com/embed/LUz0LeY7Dfs" title="FOOTWORK and QUICKNESS DRILLS for Basketball | ladder and Cone drills" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div> -->
+        <!-- <div class="col-md-4">
+          <iframe width="320" height="240" src="https://www.youtube.com/embed/Zix5EP74jTs" title="The 10 Minute Ball Handling Workout" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
           <!-- </div> -->
           <!-- <div class="column"> -->
-            <iframe width="320" height="240" src="https://www.youtube.com/embed/Fl4VB4o74-s" title="DeMatha Basketball Competitive Conditioning Drills (2010)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <iframe width="320" height="240" src="https://www.youtube.com/embed/Fl4VB4o74-s" title="DeMatha Basketball Competitive Conditioning Drills (2010)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
           <!-- </div> -->
-    </div>
+    <!-- </div>
     <div class="col-md-4">
      <h2>Resources</h2>
      <h5>Lateral Lunges</h5>
@@ -66,9 +74,8 @@
      <p>Why you should do it: To improve the firing and muscle-recruitment patterns of the glutes, which are important for jumping and explosive movements.</p>
      <h5>Leg curl</h5>
      <p>Why you should do it: Like the glute bridge, this keeps the hips extended and forces the hamstrings to work, ultimately improving leaping ability and posterior strength.
-    </p>
-</div>
+    </p> -->
+<!-- </div> -->
 
 
-</div>
- 
+
