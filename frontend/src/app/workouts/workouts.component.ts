@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-workouts',
@@ -11,5 +12,11 @@ export class WorkoutsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  Testing(){
+ $('#all').show()
+  
+  }
+
 
 }
