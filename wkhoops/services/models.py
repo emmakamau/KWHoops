@@ -1,7 +1,4 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
-
-
 
 # Create your models here.
 class Services(models.Model):
@@ -17,8 +14,8 @@ class Services(models.Model):
     category = models.CharField(max_length=50,null=True,choices=CATEGORY)
     description = models.TextField(max_length=200,null=True,default='')
     entry_date = models.DateField(auto_now_add=True,null=False)
-    image = CloudinaryField('image',null=True)
-    # video = CloudinaryField('video',null=True)
+    image = models.ImageField('image',null=True)
+    # video = models.ImageField('video',null=True)
     
 
     def save_services(self):
