@@ -1,11 +1,11 @@
 <div class="container mt-5" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="#" [formGroup]="registrationForm" (ngSubmit)="userRegistration(loginBtn)">
             <h1>Create Account</h1>
-            <input type="text" placeholder="Username" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <input formControlName='username' type="text" placeholder="Username" />
+            <input formControlName='email' type="email" placeholder="Email" />
+            <input formControlName='password' type="password" placeholder="Password" />
+            <button type="submit">Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
@@ -22,7 +22,7 @@
             <div class="overlay-panel overlay-left">
                 <h1>Welcome Back!</h1>
                 <p class="welcome-text">To keep connected with us please login with your personal info</p>
-                <button class="ghost" id="signIn">Sign In</button>
+                <button class="ghost" id="signIn" #loginBtn>Sign In</button>
             </div>
             <div class="overlay-panel overlay-right">
                 <h1>Hello, Friend!</h1>
