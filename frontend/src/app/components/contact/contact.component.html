@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <form (ngSubmit)="submitForm()" #contactForm="ngForm" >
+                <form #contactForm="ngForm" (ngSubmit)="submitForm(); contactForm.resetForm()" >
                     <div class="row">
                         <div class="col">
                             <label for="firstName" class="labels" >FIRST NAME</label>
@@ -47,7 +47,7 @@
                     
                     <div class="form-group">
                         <label for="email" class="labels" >EMAIL ADDRESS</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="wajakoyah@basketball.com" [(ngModel)]="email" #emailInput="ngModel" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="wajakoyah@basketball.com" [(ngModel)]="email" #emailInput="ngModel" email required>
                         <div class="help is-error alert" *ngIf="emailInput.invalid && emailInput.touched">
                             A valid email is required
                         </div>

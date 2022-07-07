@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -11,14 +12,15 @@ export class ContactComponent implements OnInit {
   lastName: any;
   email: any;
   message: any;
+  contactForm = NgForm;
 
   constructor() { }
 
   ngOnInit(): void { }
 
   submitForm(){ 
-    const response = `Thank you ${this.firstName}. I have been submitted successfully`
-    alert(response, )
+    const response = `Thank you ${this.firstName}. Your Message has been submitted successfully`
+      alert(response)    
   }
 
 }
