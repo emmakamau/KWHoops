@@ -15,6 +15,9 @@ import { UserAuthenticationService } from './user-authentication.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TrainingsComponent } from './trainings/trainings.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +25,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     YogaComponent,
     WorkoutsComponent,
     SafePipe,   
-    UserAuthenticationComponent
+    UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularEmbedVideoModule,
     RouterModule.forRoot([
-      {path: '', component: UserAuthenticationComponent},
+      {path: '', component: HomeComponent},
+      {path: 'auth', component: UserAuthenticationComponent},
       {path: 'workouts', component: WorkoutsComponent},
       {path: 'yoga', component: YogaComponent},
+      {path: 'training', component: TrainingsComponent},
     ]),  
     HttpClientModule,
     FormsModule,

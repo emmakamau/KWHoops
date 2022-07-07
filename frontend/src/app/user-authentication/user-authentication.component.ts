@@ -41,7 +41,7 @@ export class UserAuthenticationComponent implements OnInit {
       this.service.loginUser(this.formGroup.value).subscribe(response => {
         console.log(response);
         localStorage.setItem('token', response.token)
-        this.router.navigate(['/workouts'])
+        this.router.navigate(['/'])
         
         // if (response.success) {
         //   alert(response.message)
