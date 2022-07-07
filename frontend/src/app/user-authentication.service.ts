@@ -1,26 +1,38 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-
-const httpOptions = { 
-  headers: new HttpHeaders({
-    'Content-Type':'application/json'
-  })
-}
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserAuthenticationService {
   readonly APIUrl = "http://127.0.0.1:8000";
+  private httpOptions: any;
 
-  constructor(private http:HttpClient) { }
-
-  registerUser(userData): Observable<any>{
-    return this.http.post(this.APIUrl+'/api/auth/register/',userData)
+  constructor(private http:HttpClient) {
+    this.httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'}),
+    observe:'body'
+  }
   }
 
-  loginUser(userData): Observable<any>{
-    return this.http.post(this.APIUrl+'/api/auth/login/',userData)
+  loginUser(data: any): Observable<any>{
+    var user = JSON.stringify(data)
+    console.log(user)
+    return this.http.post<any>(this.APIUrl+'/api/auth/login/',user)
   }
 }
+
+/*
+ authenticateUserWithServer(loginCredentials): Observable<IAuthResponse> {
+        return this.http.post<IAuthResponse>(`${environment.BASE_URL}login`, loginCredentials)
+            .pipe(map(user => {
+                localStorage.setItem('currentUser', JSON.stringify(user));
+
+                this.userSubject.next(user);
+                return user;
+            }));
+    }
+
+*/
