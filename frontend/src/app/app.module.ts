@@ -29,11 +29,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     AngularEmbedVideoModule,
     RouterModule.forRoot([
-      {path: '', component: YogaComponent},
+      {path: '', component: UserAuthenticationComponent},
       {path: 'workouts', component: WorkoutsComponent},
-    ]),
-
-  
+      {path: 'yoga', component: YogaComponent},
+    ]),  
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
