@@ -56,9 +56,7 @@ h5 span {
     font-weight: 800;
 }
 
-#submit-btn:hover {
-    background-color: #DC582A;
-    color: white;
-    transition: 0.7s;
+.alert {
+    color: red;
 }
 

@@ -26,28 +26,41 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <form action="submit">
+                <form (ngSubmit)="submitForm()" #contactForm="ngForm" >
                     <div class="row">
                         <div class="col">
-                            <label for="first-name" class="labels" >FIRST NAME</label>
-                            <input type="text" class="form-control" id="first-name" placeholder="Waja" required>
+                            <label for="firstName" class="labels" >FIRST NAME</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Waja" name="firstName" [(ngModel)]="firstName" #firstnameInput="ngModel" required>
+                            <div class="help is-error alert" *ngIf="firstnameInput.invalid && firstnameInput.touched">
+                                Your First Name is required
+                            </div>
                         </div>
+                        
                         <div class="col">
-                            <label for="last-name" class="labels" >LAST NAME</label>
-                            <input type="text" class="form-control" id="last-name" placeholder="Koyah" required>
-                        </div>
+                            <label for="lastName" class="labels" >LAST NAME</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Koyah" name="lastName" [(ngModel)]="lastName" #lastnameInput="ngModel" required>
+                            <div class="help is-error alert" *ngIf="lastnameInput.invalid && lastnameInput.touched">
+                                Your Last Name is required
+                            </div>
+                        </div>                      
                     </div> <br>
                     
                     <div class="form-group">
                         <label for="email" class="labels" >EMAIL ADDRESS</label>
-                        <input type="email" class="form-control" id="email" placeholder="wajakoyah@basketball.com" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="wajakoyah@basketball.com" [(ngModel)]="email" #emailInput="ngModel" required>
+                        <div class="help is-error alert" *ngIf="emailInput.invalid && emailInput.touched">
+                            A valid email is required
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="message" class="labels" >MESSAGE</label>
-                        <input type="text" class="form-control" id="message" placeholder="Please type your message..." required>
+                        <label for="message" class="labels" >YOUR MESSAGE</label>
+                        <input type="text" class="form-control" id="message" name="message" placeholder="Please type your message..." [(ngModel)]="message" #messageInput="ngModel" required>
+                        <div class="help is-error alert" *ngIf="messageInput.invalid && messageInput.touched">
+                            Please enter a valid message
+                        </div>
                     </div>
                     <div class="justify-content-center text-center">
-                        <button type="button" class="btn btn-primary btn-lg" id="submit-btn" value="Submit">SEND MESSAGE</button>
+                        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn" value="Submit" [disabled]="contactForm.invalid">SEND MESSAGE</button>
                     </div>
                 </form>
             </div>

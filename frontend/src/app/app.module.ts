@@ -9,6 +9,7 @@ import { VeganComponent } from './components/vegan/vegan.component';
 import { VegeterianComponent } from './components/vegeterian/vegeterian.component';
 import { NonVegeterianComponent } from './components/non-vegeterian/non-vegeterian.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactComponent } from './components/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
