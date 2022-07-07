@@ -20,17 +20,14 @@ export class UserAuthenticationService {
       })
     })
   }
+
+  registerUser(data: any): Observable<any>{
+    var newUser = JSON.stringify(data)
+    console.log(newUser)
+    return this.http.post<any>(this.APIUrl+'/api/auth/register/', newUser, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+      })
+    })
+  }
 }
-
-/*
- authenticateUserWithServer(loginCredentials): Observable<IAuthResponse> {
-        return this.http.post<IAuthResponse>(`${environment.BASE_URL}login`, loginCredentials)
-            .pipe(map(user => {
-                localStorage.setItem('currentUser', JSON.stringify(user));
-
-                this.userSubject.next(user);
-                return user;
-            }));
-    }
-
-*/

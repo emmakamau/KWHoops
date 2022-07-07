@@ -13,12 +13,19 @@ declare var loadExtJS: any;
 })
 export class UserAuthenticationComponent implements OnInit {
   formGroup: FormGroup;
+  signUpForm: FormGroup;
 
   constructor(private service: UserAuthenticationService, private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({
       email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])
     });
+
+    this.signUpForm = this.formBuilder.group({
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      username: new FormControl('', [Validators.required]),
+    })
   }
 
   ngOnInit(): void {
@@ -33,6 +40,19 @@ export class UserAuthenticationComponent implements OnInit {
         } else {
           console.log('Failed')
           alert('Do we really know you?')
+        }
+      })
+    }
+  }
+
+  userRegistration(){
+    if (this.signUpForm.valid){
+      this.service.registerUser(this.signUpForm.value).subscribe(response => {
+        if(response.email){
+          alert("Registration successful")
+        }else{
+          console.log('Error')
+          alert("We ran into a problem")
         }
       })
     }

@@ -1,11 +1,11 @@
 <div class="container mt-5" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="#" [formGroup]="signUpForm" (ngSubmit)="userRegistration()">
             <h1>Create Account</h1>
-            <input type="text" placeholder="Username" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <input formControlName="username" type="text" placeholder="Username" />
+            <input formControlName="email" type="email" placeholder="Email" />
+            <input formControlName="password" type="password" placeholder="Password" />
+            <button type="submit">Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
