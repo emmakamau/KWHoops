@@ -48,4 +48,3 @@ class LoginAPIView(GenericAPIView):
             return response.Response(serializer.data, status=status.HTTP_200_OK)
         return response.Response({'message': "Invalid credentials, try again"}, status=status.HTTP_401_UNAUTHORIZED)
 
-

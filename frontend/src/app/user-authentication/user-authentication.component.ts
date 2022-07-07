@@ -28,10 +28,11 @@ export class UserAuthenticationComponent implements OnInit {
   userLogin() {
     if (this.formGroup.valid) {
       this.service.loginUser(this.formGroup.value).subscribe(response => {
-        if (response.success) {
-          alert(response.message)
+        if (response.email) {
+          alert('Succeful login')
         } else {
-          alert(response.message)
+          console.log('Failed')
+          alert('Do we really know you?')
         }
       })
     }

@@ -10,17 +10,15 @@ export class UserAuthenticationService {
   readonly APIUrl = "http://127.0.0.1:8000";
   private httpOptions: any;
 
-  constructor(private http:HttpClient) {
-    this.httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'}),
-    observe:'body'
-  }
-  }
+  constructor(private http:HttpClient) { }
 
   loginUser(data: any): Observable<any>{
     var user = JSON.stringify(data)
-    console.log(user)
-    return this.http.post<any>(this.APIUrl+'/api/auth/login/',user)
+    return this.http.post<any>(this.APIUrl+'/api/auth/login/',user, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+      })
+    })
   }
 }
 
