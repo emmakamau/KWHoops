@@ -1,0 +1,62 @@
+body {
+    background-color: #f6faf9;
+
+}
+
+#main-container {
+    color: #ffffff;
+    padding: 50px;
+    padding-bottom: 80px;
+    background: url("/assets/images/worldbnw.jpg");
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+}
+
+#contact-header{
+    font-weight: 800;
+    font-size: 60px;
+    padding-top: 15px;
+}
+
+#intro-container {
+    padding-bottom: 50px;
+}
+
+h5 span {
+    color: #E80000;
+}
+
+.contact-details {
+    text-align: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.labels {
+    color: #E80000;
+    font-weight: 900;
+    font-size: large;
+}
+
+#message {
+    padding-top: 10px;
+    padding-bottom: 20%;
+}
+
+
+#submit-btn {
+    justify-content: center;
+    align-self: center;
+    width: 40%;
+    background-color: #E80000;
+    border: 1px solid black;
+    font-weight: 800;
+}
+
+#submit-btn:hover {
+    background-color: white;
+    color: #E80000;
+}
+

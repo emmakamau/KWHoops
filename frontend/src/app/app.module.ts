@@ -8,6 +8,7 @@ import { BootcampsComponent } from './components/bootcamps/bootcamps.component';
 import { VeganComponent } from './components/vegan/vegan.component';
 import { VegeterianComponent } from './components/vegeterian/vegeterian.component';
 import { NonVegeterianComponent } from './components/non-vegeterian/non-vegeterian.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NonVegeterianComponent } from './components/non-vegeterian/non-vegeteri
     BootcampsComponent,
     VeganComponent,
     VegeterianComponent,
-    NonVegeterianComponent
+    NonVegeterianComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
