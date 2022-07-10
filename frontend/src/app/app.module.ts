@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TrainingsComponent } from './trainings/trainings.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ResetPasswordComponent } from './user-authentication/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     YogaComponent,
     WorkoutsComponent,
     SafePipe,   
-    UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent
+    UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent, ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +38,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
       {path: 'workouts', component: WorkoutsComponent},
       {path: 'yoga', component: YogaComponent},
       {path: 'training', component: TrainingsComponent},
+      {path: 'auth/reset-password', component: ResetPasswordComponent}
     ]),  
     HttpClientModule,
     FormsModule,
