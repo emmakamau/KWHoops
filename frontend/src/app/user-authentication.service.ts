@@ -22,26 +22,16 @@ export class UserAuthenticationService {
   }
   }
 
-  loginUser(data: user): Observable<any>{
-    // var user = JSON.stringify(data)
-    // console.log(user)
+  loginUser(data:user): Observable<any>{
     return this.http.post<any>(this.APIUrl+'/api/auth/login/',data)
   }
 
   registerUser(data:user){
     return this.http.post<any>(this.APIUrl+'/api/auth/register/', data)
   }
+
+  resetPassword(data:user){
+    return this.http.post<any>(this.APIUrl+'/api/auth/request-reset-email/', data)
+  }
 }
 
-/*
- authenticateUserWithServer(loginCredentials): Observable<IAuthResponse> {
-        return this.http.post<IAuthResponse>(`${environment.BASE_URL}login`, loginCredentials)
-            .pipe(map(user => {
-                localStorage.setItem('currentUser', JSON.stringify(user));
-
-                this.userSubject.next(user);
-                return user;
-            }));
-    }
-
-*/

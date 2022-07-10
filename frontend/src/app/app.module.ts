@@ -19,6 +19,8 @@ import { TrainingsComponent } from './trainings/trainings.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ResetPasswordComponent } from './user-authentication/reset-password/reset-password.component';
+import { ResetPasswordFormComponent } from './user-authentication/reset-password-form/reset-password-form.component';
+import { LogoutComponent } from './user-authentication/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { ResetPasswordComponent } from './user-authentication/reset-password/res
     YogaComponent,
     WorkoutsComponent,
     SafePipe,   
-    UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent, ResetPasswordComponent
+    UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent, ResetPasswordComponent, ResetPasswordFormComponent, LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { ResetPasswordComponent } from './user-authentication/reset-password/res
       {path: 'workouts', component: WorkoutsComponent},
       {path: 'yoga', component: YogaComponent},
       {path: 'training', component: TrainingsComponent},
-      {path: 'auth/reset-password', component: ResetPasswordComponent}
+      {path: 'auth/reset-password', component: ResetPasswordComponent},
+      {path: 'logout', component: HomeComponent}
     ]),  
     HttpClientModule,
     FormsModule,
