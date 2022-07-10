@@ -1,8 +1,7 @@
 .navbar{
     color: white;
   }
-  .active-link
-  {
-    font-weight: bold;
-    color: white;
-  }
+.active-link{
+  font-weight: bold;
+  color: white;
+}

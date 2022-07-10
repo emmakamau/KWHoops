@@ -41,6 +41,7 @@ import { LogoutComponent } from './user-authentication/logout/logout.component';
       {path: 'yoga', component: YogaComponent},
       {path: 'training', component: TrainingsComponent},
       {path: 'auth/reset-password', component: ResetPasswordComponent},
+      {path: 'auth/reset-password-form', component: ResetPasswordFormComponent},
       {path: 'logout', component: HomeComponent}
     ]),  
     HttpClientModule,

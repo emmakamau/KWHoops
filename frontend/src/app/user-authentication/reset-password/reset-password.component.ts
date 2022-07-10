@@ -24,7 +24,7 @@ export class ResetPasswordComponent implements OnInit {
       console.log(this.resetForm.value)
       this.service.resetPassword(this.resetForm.value).subscribe(response => {
         console.log(response)
-        this.router.navigate(['/'])
+        this.router.navigate(['/auth/reset-password-form'])
       })
     }
   }
