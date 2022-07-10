@@ -1,0 +1,144 @@
+/*Home Section*/
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(https://images.unsplash.com/photo-1577416412292-747c6607f055?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  font-size: 30px;
+  color: white;
+}
+
+#home h1 {
+  font-weight: bolder;
+}
+
+.btn {
+  background-color: #e80000;
+  font-weight: bolld;
+}
+
+.aboutpage,
+.servicepage,
+.homepage,
+.planspage {
+  padding-left: 5%;
+}
+
+/* services*/
+
+.column1 {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 0 -5px;
+  justify-content: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+#service h1,
+h5 {
+  text-align: center;
+  font-weight: bolder;
+}
+
+/* plans */
+
+#plans {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url(/assets/images/plans.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  font-size: 30px;
+  color: white;
+}
+
+#plans h1 {
+  text-align: center;
+  font-weight: bolder;
+}
+
+/* Create three columns of equal width */
+.columns {
+  float: left;
+  width: 33%;
+  padding: 8px;
+}
+
+/* Style the list */
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Pricing header */
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+/* List items */
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+  background-color: #e80000;
+  font-size: 20px;
+}
+
+/* The "Sign Up" button */
+.button {
+  background-color: #e80000;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change the width of the three columns to 100%
+  (to stack horizontally on small screens) */
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
