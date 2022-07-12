@@ -40,8 +40,10 @@ export class UserAuthenticationComponent implements OnInit {
       this.service.loginUser(this.formGroup.value).subscribe(response => {
         console.log(response);
         localStorage.setItem('token', response.token)
+        this.service.showSuccessBar('Login successful', 'OK')
         this.router.navigate(['/'])
-      })
+      }),
+      this.service.showFailureBar('Email or password is incorrect', 'OK')
     }
   }
 

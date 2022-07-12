@@ -8,7 +8,8 @@ import { WorkoutsComponent } from './workouts/workouts.component';
 import { RouterModule } from '@angular/router';
 import { AngularEmbedVideoModule } from 'angular-embed-video';
 import { SafePipe } from './safe.pipe';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { UserAuthenticationComponent } from './user-authentication/user-authentication.component';
 import { UserAuthenticationService } from './user-authentication.service';
@@ -34,6 +35,8 @@ import { LogoutComponent } from './user-authentication/logout/logout.component';
     BrowserModule,
     AppRoutingModule,
     AngularEmbedVideoModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'auth', component: UserAuthenticationComponent},
