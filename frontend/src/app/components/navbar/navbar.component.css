@@ -1,6 +1,105 @@
-.navbar-brand{
+.navbar_ {
+  background-color: transparent;
+  background-color: #e80000;
+  height: 80px;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  z-index: 190000;
+}
+
+.nav-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+.logo a{
+  color:black;
+}
+.navs{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navs div{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.navs div li a{
+  color: black;
+}
+.nav-right{
+  display: flex;
+  gap: 20px;
+}
+
+.nav-right, .nav-right .social-icons{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons .icon{
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+
+}
+.signup-btn{
+  background-color: #000;
   color: white;
-  font-weight: bolder;
-  font-family: 'Dancing Script', cursive;
-  font-size:2em;
+  padding: 5px 25px;
+  border-radius: 10px;
+  margin-left: 30px;
+  
+}
+.menu{
+  display: none;
+}
+.menu-close{
+  cursor: pointer;
+  display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-right .social-icons{
+    display: none;
+  }
+ 
+  
+}
+
+@media screen and (max-width: 700px) {
+  .menu{
+    display: block;
+    cursor: pointer;
+  }
+  .menu-close{
+    display: flex !important;
+    justify-content: center;
+  }
+  .navs{
+    display: block;
+    position: absolute;
+    background-color: white;
+    left: 0;
+    top: 0;
+    width: 200px;
+    bottom: 0px;
+    transform: translateX(-100%);
+  }
+  .navs.open{
+    transform: translateX(0%);
+  }
+  .navs div{
+    flex-direction: column;
+    padding-top: 50px;
+
+  }
 }

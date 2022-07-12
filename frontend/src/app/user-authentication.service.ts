@@ -50,5 +50,10 @@ export class UserAuthenticationService {
   resetPassword(data:user){
     return this.http.post<any>(this.APIUrl+'/api/auth/request-reset-email/', data)
   }
+
+  isLoggedIn(): boolean{
+    return !!localStorage.getItem("token")
+  }
+  
 }
 
