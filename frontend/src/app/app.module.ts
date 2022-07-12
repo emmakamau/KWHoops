@@ -33,17 +33,19 @@ import { LogoutComponent } from './user-authentication/logout/logout.component';
   declarations: [
     AppComponent,
     BootcampsComponent,
+    DietComponent,
     VeganComponent,
     VegeterianComponent,
     NonVegeterianComponent,
     ContactComponent,
     YogaComponent,
-    SafePipe,   
+    SafePipe,  
     UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent, ResetPasswordComponent, ResetPasswordFormComponent, LogoutComponent
   ],
   imports: [
     AppRoutingModule,
     FormsModule,
+    BrowserModule,
     HttpClientModule,
     AngularEmbedVideoModule,
     BrowserAnimationsModule,
