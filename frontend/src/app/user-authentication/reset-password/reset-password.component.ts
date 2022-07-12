@@ -15,17 +15,20 @@ export class ResetPasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.resetForm = this.formBuilder.group({
-      email: new FormControl('',Validators.required)
+      email: new FormControl('', Validators.required)
     })
   }
 
-  resetPassword(){
-    if (this.resetForm.valid){
-      console.log(this.resetForm.value)
+  resetPassword() {
+    if (this.resetForm.valid) {
       this.service.resetPassword(this.resetForm.value).subscribe(response => {
-        console.log(response)
+        console.log(response.resettoken)
+        localStorage.setItem('uidb64',response.uidb64)
+        localStorage.setItem('resettoken', response.resettoken)
+        this.service.showSuccessBar('Set new password in the form provided','OK')
         this.router.navigate(['/auth/reset-password-form'])
-      })
+      }),
+      this.service.showFailureBar('Request Failed, Please try again', 'OK')
     }
   }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders,HttpErrorResponse } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface user{
@@ -48,7 +48,18 @@ export class UserAuthenticationService {
   }
 
   resetPassword(data:user){
-    return this.http.post<any>(this.APIUrl+'/api/auth/request-reset-email/', data)
+    let headers = new HttpHeaders({'Authorization': `Bearer ${localStorage.getItem('token')}`})
+    return this.http.post<any>(this.APIUrl+'/api/auth/request-reset-email/', data, {
+      headers:headers
+    })
+  }
+
+  resetPasswordComplete(data:any){
+    let headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`})
+    return this.http.patch<any>(this.APIUrl+'/api/auth/password-reset-complete/', data, {
+      headers:headers
+    })
   }
 }
 

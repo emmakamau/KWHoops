@@ -16,6 +16,7 @@ from .utils import Util
 import os
 from django.http import HttpResponsePermanentRedirect
 from .models import User
+from django.http import HttpResponse
 
 class AuthUserAPIView(GenericAPIView):
     
@@ -71,20 +72,25 @@ class RequestPasswordResetEmail(generics.GenericAPIView):
         if User.objects.filter(email=email).exists():
             user = User.objects.get(email=email)
             uidb64 = urlsafe_base64_encode(smart_bytes(user.id))
-            token = PasswordResetTokenGenerator().make_token(user)
-            current_site = get_current_site(
-                request=request).domain
-            relativeLink = reverse(
-                'password-reset-confirm', kwargs={'uidb64': uidb64, 'token': token})
+            resettoken = PasswordResetTokenGenerator().make_token(user)
+            # current_site = get_current_site(
+            #     request=request).domain
+            # relativeLink = reverse(
+            #     'password-reset-confirm', kwargs={'uidb64': uidb64, 'resettoken': resettoken})
 
-            redirect_url = request.data.get('redirect_url', '')
-            absurl = 'http://' + current_site + relativeLink
-            email_body = 'Hello, \n Use link below to reset your password  \n' + \
-                         absurl + "?redirect_url=" + redirect_url
-            data = {'email_body': email_body, 'to_email': user.email,
-                    'email_subject': 'Reset your passsword'}
-            Util.send_email(data)
-        return Response({'success': 'We have sent you a link to reset your password'})
+            # redirect_url = request.data.get('redirect_url', '')
+            # absurl = 'http://' + current_site + relativeLink
+            # email_body = 'Hello, \n Use link below to reset your password  \n' + \
+            #              absurl + "?redirect_url=" + redirect_url
+            # data = {'email_body': email_body, 'to_email': user.email,
+            #         'email_subject': 'Reset your passsword'}
+            # Util.send_email(data)
+            print(uidb64)
+        return Response({
+            'success': 'Set new password in the form provided',
+            'uidb64': uidb64,
+            'resettoken': resettoken
+            })
 
 
 class PasswordTokenCheckAPI(generics.GenericAPIView):
@@ -106,8 +112,7 @@ class PasswordTokenCheckAPI(generics.GenericAPIView):
                     return CustomRedirect(os.environ.get('FRONTEND_URL', '') + '?token_valid=False')
 
             if redirect_url and len(redirect_url) > 3:
-                return CustomRedirect(
-                    redirect_url + '?token_valid=True&message=Credentials Valid&uidb64=' + uidb64 + '&token=' + token)
+                return HttpResponse(redirect_url + '?token_valid=True&message=Credentials Valid&uidb64=' + uidb64 + '&token=' + token)
             else:
                 return CustomRedirect(os.environ.get('FRONTEND_URL', '') + '?token_valid=False')
 
