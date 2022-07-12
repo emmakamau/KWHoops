@@ -57,6 +57,53 @@
   background-color: #f1f1f1;
 }
 
+.service-title{
+  font-weight: bolder;
+  color: white;
+  text-align: left;
+}
+
+.card-one{
+  width: 20em;
+  border-radius: 1em;
+  background-image: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+  height: 15em;
+}
+
+.card-two{
+  width: 50em;
+  border-radius: 1em;
+  background-image: url("https://media.istockphoto.com/photos/guarding-his-player-picture-id915349476?b=1&k=20&m=915349476&s=170667a&w=0&h=4q2VXqmiKgTULNPgH6jtmgqRxZYS395EssVO49eoRX4=");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:22em;
+}
+
+.card-three{
+  background-image: url("https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29ya291dHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20em;
+  height: 15em;
+}
+
+.card-four{
+  background-image: url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8eW9nYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20em;
+  height: 15em;
+}
+
+.card-five{
+  background-image: url("https://images.unsplash.com/photo-1588411105268-51be2fd9722e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG91cm5hbWVudCUyMGJhc2tldGJhbGx8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20em;
+  height: 15em;
+}
+
+
 #service h1,
 h5 {
   text-align: center;
@@ -68,7 +115,7 @@ h5 {
 #plans {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   background-image: url(/assets/images/plans.png);
   background-position: center;
   background-size: cover;
@@ -133,6 +180,24 @@ h5 {
   text-align: center;
   text-decoration: none;
   font-size: 18px;
+}
+
+.card-plan{
+  background-color: #e80000;
+}
+
+.card-btn{
+  background-color: #111;
+  border: #111;
+}
+
+.card-text-plan{
+  font-size: 3em;
+}
+
+.plans-heading{
+  color: #111;
+  font-weight: bolder;
 }
 
 /* Change the width of the three columns to 100%

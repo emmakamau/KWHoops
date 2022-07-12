@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAuthenticationService } from 'src/app/user-authentication.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 // declare var loadExtJS: any;
@@ -41,30 +40,26 @@ export class UserAuthenticationComponent implements OnInit {
       this.service.loginUser(this.formGroup.value).subscribe(response => {
         console.log(response);
         localStorage.setItem('token', response.token)
+        this.service.showSuccessBar('Login successful', 'OK')
         this.router.navigate(['/'])
-        
-        // if (response.success) {
-        //   alert(response.message)
-        // } else {
-        //   alert(response.message)
-        // }
-      })
+      }),
+      this.service.showFailureBar('Email or password is incorrect', 'OK')
     }
   }
 
   userRegistration(btn: HTMLButtonElement){
-    console.log(this.registrationForm.value)
-    console.log(btn);
-    
-    
+    // console.log(this.registrationForm.value)
+    // console.log(btn);
     if (this.registrationForm.valid){
       this.service.registerUser(this.registrationForm.value).subscribe(response=>{
         console.log(this.regSuccess);
+        this.service.showSuccessBar('Registration successful','OK')
         this.regSuccess = true
         if (this.regSuccess){
           btn.click()
         }
-      })
+      }),
+      this.service.showFailureBar('A user with the same credentials already exists', 'Try Again')
     }
   }
 

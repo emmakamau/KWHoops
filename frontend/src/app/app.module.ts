@@ -14,7 +14,8 @@ import { WorkoutsComponent } from './workouts/workouts.component';
 import { RouterModule } from '@angular/router';
 import { AngularEmbedVideoModule } from 'angular-embed-video';
 import { SafePipe } from './safe.pipe';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { UserAuthenticationComponent } from './user-authentication/user-authentication.component';
 import { UserAuthenticationService } from './user-authentication.service';
@@ -24,6 +25,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TrainingsComponent } from './trainings/trainings.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ResetPasswordComponent } from './user-authentication/reset-password/reset-password.component';
+import { ResetPasswordFormComponent } from './user-authentication/reset-password-form/reset-password-form.component';
+import { LogoutComponent } from './user-authentication/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -35,19 +39,24 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ContactComponent,
     YogaComponent,
     SafePipe,   
-    UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent
+    UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent, ResetPasswordComponent, ResetPasswordFormComponent, LogoutComponent
   ],
   imports: [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     AngularEmbedVideoModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'auth', component: UserAuthenticationComponent},
       {path: 'workouts', component: WorkoutsComponent},
       {path: 'yoga', component: YogaComponent},
       {path: 'training', component: TrainingsComponent},
+      {path: 'auth/reset-password', component: ResetPasswordComponent},
+      {path: 'auth/reset-password-form', component: ResetPasswordFormComponent},
+      {path: 'logout', component: HomeComponent}
     ]),  
     HttpClientModule,
     FormsModule,
