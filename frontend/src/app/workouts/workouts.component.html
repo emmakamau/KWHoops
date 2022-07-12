@@ -1,50 +1,48 @@
 <div class="container-fluid">
-    <div class="video">
-        <style>
-            .gradient-custom {
-              /* fallback for old browsers */
-              background: #a18cd1;
-          
-              /* Chrome 10-25, Safari 5.1-6 */
-              background: -webkit-linear-gradient(
-                45deg,
-                rgba(108, 112, 111, 0.6),
-                rgba(91, 14, 214, 0.6) 100%
-              );
-            }
-          </style>
-          
-          <!-- Background image -->
-          <div
-            class="bg-image"
-            style="
+  <div class="video">
+    <style>
+      .gradient-custom {
+        /* fallback for old browsers */
+        background: #a18cd1;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(45deg,
+            rgba(108, 112, 111, 0.6),
+            rgba(91, 14, 214, 0.6) 100%);
+      }
+    </style>
+
+    <!-- Background image -->
+    <div class="bg-image" style="
               background-image: url('../../assets/workout 2.jpg');
               height: 50vh;
-            "
-          >
-            <div class="mask gradient-custom">
-              <div class="d-flex justify-content-center align-items-center h-100">
-                <h1 class=" mb-0">Workouts</h1>
-              </div>
-            </div>
-          </div>
-          <!-- Background image -->
-    </div>
-    <h2 class="wrapper">Categories</h2>
-    <div class="wrapper">
-      <button class="btn btn-info" id="all" (click)="Testing()">All</button>
-
-      <button  (click)="onEndurance()" class="btn btn-info">Endurance</button>
-      <button (click)="onStrength()" class="btn btn-info">Strength</button>
-      <button  (click)="onBalance()" class="btn btn-info">Balance</button>
-      <button (click)="onFlexibility()" class="btn btn-info">Flexibility</button>
-
-    </div>
-    <div class="container mt-2"  *ngFor="let workout of workouts">
-     
-        <div class="iframe">
-          <iframe class="one" width="320" height="240" [src]="workout.video|safe" title="The 15 Minute-Per-Day Basketball Workout (FULL BREAKDOWN)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-      
+            ">
+      <div class="mask gradient-custom">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <h1 class=" mb-0">Workouts</h1>
         </div>
-        
+      </div>
+    </div>
+    <!-- Background image -->
+  </div>
+
+  <h2 class="wrapper m-4 title">Categories</h2>
+  <div class="wrapper">
+    <button class="btn btn-info" id="all" (click)="Testing()">All</button>
+
+    <button (click)="onEndurance()" class="btn btn-info">Endurance</button>
+    <button (click)="onStrength()" class="btn btn-info">Strength</button>
+    <button (click)="onBalance()" class="btn btn-info">Balance</button>
+    <button (click)="onFlexibility()" class="btn btn-info">Flexibility</button>
+
+  </div>
+  <div class="container mt-2" *ngFor="let workout of workouts">
+
+    <div class="iframe">
+      <iframe class="one" width="320" height="240" [src]="workout.video|safe"
+        title="The 15 Minute-Per-Day Basketball Workout (FULL BREAKDOWN)" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+
+  </div>

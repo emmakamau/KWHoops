@@ -1,13 +1,24 @@
-h1{
-    color: #F80000;
-    font-family:cursive;
+h1 {
+  color: #F80000;
+  font-family: cursive;
 }
 
-.iframe{
-    float: left;
-    margin:1em;
-  }
- 
-  .btn{
-    margin-left: 1%;
-  }
+.iframe {
+  float: left;
+  margin: 1em;
+}
+
+.btn {
+  margin-left: 1%;
+}
+
+.btn-info{
+  background-color: #E80000;
+  color: white;
+  border: #E80000;
+}
+
+.title{
+  font-weight: bolder;
+  font-size: 3em;
+}

@@ -1,7 +1,6 @@
-.navbar{
-    color: white;
-  }
-.active-link{
-  font-weight: bold;
+.navbar-brand{
   color: white;
+  font-weight: bolder;
+  font-family: 'Dancing Script', cursive;
+  font-size:2em;
 }
