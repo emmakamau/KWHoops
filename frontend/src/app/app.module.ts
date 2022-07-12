@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DietComponent } from './components/diet/diet.component';
-import { BootcampsComponent } from './components/bootcamps/bootcamps.component';
-import { VeganComponent } from './components/vegan/vegan.component';
-import { VegeterianComponent } from './components/vegeterian/vegeterian.component';
-import { NonVegeterianComponent } from './components/non-vegeterian/non-vegeterian.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { DietComponent } from './diet/diet.component';
+import { BootcampsComponent } from './bootcamps/bootcamps.component';
+import { VeganComponent } from './vegan/vegan.component';
+import { VegeterianComponent } from './vegeterian/vegeterian.component';
+import { NonVegeterianComponent } from './non-vegeterian/non-vegeterian.component';
+import { ContactComponent } from './contact/contact.component';
 import { YogaComponent } from './yoga/yoga.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { RouterModule } from '@angular/router';
@@ -39,6 +39,7 @@ import { LogoutComponent } from './user-authentication/logout/logout.component';
     NonVegeterianComponent,
     ContactComponent,
     YogaComponent,
+    WorkoutsComponent,
     SafePipe,  
     UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent, ResetPasswordComponent, ResetPasswordFormComponent, LogoutComponent
   ],
@@ -56,6 +57,9 @@ import { LogoutComponent } from './user-authentication/logout/logout.component';
       {path: 'workouts', component: WorkoutsComponent},
       {path: 'yoga', component: YogaComponent},
       {path: 'training', component: TrainingsComponent},
+      {path: 'contact', component: ContactComponent},
+      {path: 'diet', component: DietComponent},
+      {path: 'bootcamps', component: BootcampsComponent},
       {path: 'auth/reset-password', component: ResetPasswordComponent},
       {path: 'auth/reset-password-form', component: ResetPasswordFormComponent},
       {path: 'logout', component: HomeComponent}

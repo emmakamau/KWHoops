@@ -10,12 +10,12 @@
   }
 
   #diet-container {
-    height: auto;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
   }
 
   #plans-header {
     text-align: center;
+    align-items: center;
     padding: 5px;
     font-size: 70px;
     font-weight: 800;
@@ -27,17 +27,20 @@
     font-size: 80px;
     font-family: 'Dancing Script', cursive;
     font-weight: 900;
+    padding: 20px;
   }
 
   #paragraph-header {
-    font-weight: 600;
+    font-weight: 900;
     font-size: 60px;
-    padding-top: 40px;
+    padding-top: 60px;
+    line-height: initial;
+
   }
 
   .paragraph-details {
     font-size: large;
-    padding-right: 50px;
+    padding-right: 40px;
   }
   
   /* Float four columns side by side */
@@ -58,6 +61,7 @@
   }
 
   #plans-container {
+    background-color: #FAF6F9;
     padding: 20px;
     height: auto;
     padding-bottom: 50px;

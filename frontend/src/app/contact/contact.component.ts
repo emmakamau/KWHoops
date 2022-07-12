@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-contact',
@@ -19,8 +20,12 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void { }
 
   submitForm(){ 
-    const response = `Thank you ${this.firstName}. Your Message has been submitted successfully`
-      alert(response)    
+    const response = `Thank you ${this.firstName}. Your Message has been submitted successfully.`
+       
+        $(".popup").html(response);
+        $(".popup").show(); // will display the popup window
+        
+   }   
   }
 
-}
+

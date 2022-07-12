@@ -24,7 +24,7 @@ body {
     padding-bottom: 50px;
 }
 
-h5 span {
+h4 span {
     color: #E80000;
 }
 
@@ -58,5 +58,17 @@ h5 span {
 
 .alert {
     color: red;
+}
+
+.popup {
+    background:#fff;
+    width:500px;
+    display:none;
+    min-height:150px;
+    background-color: #E80000;
+    color: white;
+    text-align: center ;
+    padding-top: 20px;
+    font-size: large;
 }
 
