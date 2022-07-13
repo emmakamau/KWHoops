@@ -4,69 +4,91 @@ import { UserAuthenticationService } from 'src/app/user-authentication.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [UserAuthenticationService]
 })
-export class HomeComponent implements OnInit { 
+export class HomeComponent implements OnInit {
   constructor(private service: UserAuthenticationService) { }
-  handler:any = null;
+
+  handler: any = null;
   ngOnInit() {
     this.loadStripe();
   }
- 
-  payFreeTrial(amount: any) {    
- 
+
+  // userSubscribe(data:any): void{
+  //   if(data) {
+  //     let jsonData = JSON.stringify(data)
+  //     console.log(jsonData)
+  //     this.service.userSubscription(JSON.stringify(jsonData)).subscribe(response => {
+  //       console.log(response)
+  //       this.service.showSuccessBar('Subscription Successful', '')
+  //     })
+  //     this.service.showFailureBar('Unsuccessful, Please try again', 'OK')
+  //   }
+  // }
+
+  payFreeTrial(amount: any) {
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
       locale: 'auto',
       token: function (token: any) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
-        // let JWTtoken = localStorage.getItem('token')
-        // let user = atob(JWTtoken.split('.')[1])
-        let useremail = token.email
-        let SubscriptionToken = token.id
-        let SubscriptionName = "7 Day Trial"
-        let data = {"email": useremail, "sub_name": SubscriptionName, "sub_token": SubscriptionToken} 
-        console.log(data)
-        this.service.userSubscription(data).subscribe(response => {
-          console.log(response)
-          this.service.showSuccessBar('Subscription Successful', '')
-        })
-        this.service.showFailureBar('Unsuccessful, Please try again', 'OK')
+        userSubscribe(token)
       }
     });
- 
+    
+    // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+        // let useremail = token.email
+        // let SubscriptionToken = token.id
+        // let SubscriptionName = "7 Day Trial"
+        // this.data = { "user_email": useremail, "sub_plan_name": SubscriptionName, "sub_payment_token": SubscriptionToken }
+        // //console.log(JSON.stringify(data))
+        // let jsonData = JSON.stringify(this.data)
+        // return jsonData
+
+    const userSubscribe = (token : any) => {
+      let useremail = token.email
+      let SubscriptionToken = token.id
+      let SubscriptionName = "7 Day Trial"
+      let data = { "user_email": useremail, "sub_plan_name": SubscriptionName, "sub_payment_token": SubscriptionToken }
+      //let jsonData = JSON.stringify(data)
+      //console.log(jsonData)
+      this.service.userSubscription(data).subscribe(response => {
+        console.log(response)
+        this.service.showSuccessBar('Subscription Successful', '')
+      }),
+      this.service.showFailureBar('Unsuccessful, Please try again', 'OK')
+    }
+
     handler.open({
       name: 'KWHoops',
       description: 'Free Subscription',
       amount: amount * 100
     });
- 
   }
 
-  payMonthlyTrial(amount: any) {    
- 
+  payMonthlyTrial(amount: any) {
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
       locale: 'auto',
       token: function (token: any) {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
-        
+
         alert('Token Created!!');
       }
     });
- 
+
     handler.open({
       name: 'KWHoops',
       description: 'Monthly Subscription',
       amount: amount * 100
     });
- 
+
   }
 
-  payAnnualTrial(amount: any) {    
- 
+  payAnnualTrial(amount: any) {
+
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
       locale: 'auto',
@@ -78,18 +100,18 @@ export class HomeComponent implements OnInit {
         alert('Token Created!!');
       }
     });
- 
+
     handler.open({
       name: 'KWHoops',
       description: 'Annual Subscription',
       amount: amount * 100
     });
- 
+
   }
- 
+
   loadStripe() {
-     
-    if(!window.document.getElementById('stripe-script')) {
+
+    if (!window.document.getElementById('stripe-script')) {
       var s = window.document.createElement("script");
       s.id = "stripe-script";
       s.type = "text/javascript";
@@ -106,7 +128,7 @@ export class HomeComponent implements OnInit {
           }
         });
       }
-       
+
       window.document.body.appendChild(s);
     }
   }
