@@ -36,7 +36,8 @@
               AS WE RISE TOGETHER
             </h1>
             <p>
-              Basketball, a Team Sport that showcases Individual Talent.<br>It involves plenty of teamwork while also letting individual talent really shine.
+              Basketball, a Team Sport that showcases Individual Talent.<br>It involves plenty of teamwork while also
+              letting individual talent really shine.
             </p>
             <p><i class="bi bi-star-fill"></i>&#9733; Trainings</p>
             <p><i class="bi bi-star-fill"></i>&#9733; Diet</p>
@@ -81,12 +82,12 @@
       </div>
       <div class="col-md-7 p-4">
         <div class="column1">
-          <a routerLink="training" routerLinkActive="active-link"> 
-          <div class=" card card-two">
-            <img src="" alt="" height="200" />
-            <h4 class="service-title">Training</h4>
-            <h5></h5>
-          </div>
+          <a routerLink="training" routerLinkActive="active-link">
+            <div class=" card card-two">
+              <img src="" alt="" height="200" />
+              <h4 class="service-title">Training</h4>
+              <h5></h5>
+            </div>
           </a>
         </div>
       </div>
@@ -96,22 +97,22 @@
     <div class="row">
       <div class="col-md-3">
         <div class="column1">
-          <a routerLink="workouts" routerLinkActive="active-link"> 
-          <div class=" card card-three">
-            <img src="" alt="" height="200" />
-            <h4 class="service-title">Workouts</h4>
-          </div>
+          <a routerLink="workouts" routerLinkActive="active-link">
+            <div class=" card card-three">
+              <img src="" alt="" height="200" />
+              <h4 class="service-title">Workouts</h4>
+            </div>
           </a>
         </div>
       </div>
       <div class="col-md-3">
         <div class="column1">
-          <a routerLink="yoga" routerLinkActive="active-link"> 
-          <div class=" card card-four">
-            <img src="" alt="" height="200" />
-            <h4 class="service-title">Yoga</h4>
-            <h5></h5>
-          </div>
+          <a routerLink="yoga" routerLinkActive="active-link">
+            <div class=" card card-four">
+              <img src="" alt="" height="200" />
+              <h4 class="service-title">Yoga</h4>
+              <h5></h5>
+            </div>
           </a>
         </div>
       </div>
@@ -171,25 +172,26 @@
   <!--Plans section  -->
 
   <section class="plans container-fluid" id="plans">
+    <br>
+    <h1 class="plans-heading pb-3">OUR PAYMENT PLANS</h1>
+    <br>
     <div class="planspage">
-      <br>
-      <h1 class="plans-heading pb-3">OUR PAYMENT PLANS</h1>
-
       <div class="columns">
         <div class="card card-plan p-4">
           <h5 class="card-title card-plan-title">7 Day Free Trial</h5>
           <div class="card-body">
             <p class="card-text card-text-plan">0$</p>
-            <button (click)="pay(0)" class="btn btn-danger btn-block">Choose plan</button>
+            <button (click)="payFreeTrial(0)" value="7 Day Free Trial" class="btn btn-danger btn-block">Choose
+              plan</button>
           </div>
         </div>
       </div>
-      <div class="columns">
+      <div class="columns ">
         <div class="card card-plan p-4">
           <h5 class="card-title card-plan-title">Monthly</h5>
           <div class="card-body">
             <p class="card-text card-text-plan">10$</p>
-            <button (click)="pay(10)" class="btn btn-danger btn-block">Choose plan</button>
+            <button (click)="payMonthlyTrial(10)" class="btn btn-danger btn-block">Choose plan</button>
           </div>
         </div>
       </div>
@@ -198,7 +200,7 @@
           <h5 class="card-title card-plan-title">Annually</h5>
           <div class="card-body">
             <p class="card-text card-text-plan">$120</p>
-            <button (click)="pay(20)" class="btn btn-danger btn-block">Choose plan</button>
+            <button (click)="payAnnualTrial(20)" class="btn btn-danger btn-block">Choose plan</button>
           </div>
         </div>
       </div>

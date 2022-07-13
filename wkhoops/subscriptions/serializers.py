@@ -12,4 +12,4 @@ class SubscriptionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Subscription
-        fields = '__all__'
+        fields = ['sub_payment_token','sub_plan_name', 'user_email','user_id']

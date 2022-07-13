@@ -62,6 +62,14 @@ export class UserAuthenticationService {
     })
   }
 
+  userSubscription(data:any){
+    let headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('token')}`})
+    return this.http.post<any>(this.APIUrl+'/api/sub/subscribe/', data, {
+      headers:headers
+    })
+  }
+
   isLoggedIn(): boolean{
     return !!localStorage.getItem("token")
   }

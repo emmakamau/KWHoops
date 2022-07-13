@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserAuthenticationService } from 'src/app/user-authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -6,14 +7,65 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit { 
-  constructor() { }
+  constructor(private service: UserAuthenticationService) { }
   handler:any = null;
   ngOnInit() {
- 
     this.loadStripe();
   }
  
-  pay(amount: any) {    
+  payFreeTrial(amount: any) {    
+ 
+    var handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
+      locale: 'auto',
+      token: function (token: any) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+        // let JWTtoken = localStorage.getItem('token')
+        // let user = atob(JWTtoken.split('.')[1])
+        let useremail = token.email
+        let SubscriptionToken = token.id
+        let SubscriptionName = "7 Day Trial"
+        let data = {"email": useremail, "sub_name": SubscriptionName, "sub_token": SubscriptionToken} 
+        console.log(data)
+        this.service.userSubscription(data).subscribe(response => {
+          console.log(response)
+          this.service.showSuccessBar('Subscription Successful', '')
+        })
+        this.service.showFailureBar('Unsuccessful, Please try again', 'OK')
+      }
+    });
+ 
+    handler.open({
+      name: 'KWHoops',
+      description: 'Free Subscription',
+      amount: amount * 100
+    });
+ 
+  }
+
+  payMonthlyTrial(amount: any) {    
+ 
+    var handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
+      locale: 'auto',
+      token: function (token: any) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+        
+        alert('Token Created!!');
+      }
+    });
+ 
+    handler.open({
+      name: 'KWHoops',
+      description: 'Monthly Subscription',
+      amount: amount * 100
+    });
+ 
+  }
+
+  payAnnualTrial(amount: any) {    
  
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
@@ -22,13 +74,14 @@ export class HomeComponent implements OnInit {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
         console.log(token)
+        console.log()
         alert('Token Created!!');
       }
     });
  
     handler.open({
-      name: 'Demo Site',
-      description: '2 widgets',
+      name: 'KWHoops',
+      description: 'Annual Subscription',
       amount: amount * 100
     });
  
