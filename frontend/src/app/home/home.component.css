@@ -81,6 +81,7 @@
   border-radius: 1em;
   background-image: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
   height: 15em;
+  opacity: 0.5;
 }
 
 .card-two{
@@ -90,6 +91,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height:22em;
+  opacity: 0.5;
 }
 
 .card-three{
@@ -98,6 +100,7 @@
   background-size: cover;
   width: 20em;
   height: 15em;
+  opacity: 0.5;
 }
 
 .card-four{
@@ -106,6 +109,7 @@
   background-size: cover;
   width: 20em;
   height: 15em;
+  opacity: 0.5;
 }
 
 .card-five{
@@ -114,6 +118,7 @@
   background-size: cover;
   width: 20em;
   height: 15em;
+  opacity: 0.5;
 }
 
 

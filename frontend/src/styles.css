@@ -15,3 +15,15 @@ body{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+
+.wrapper{
+    max-width: 1240px;
+    margin: auto;
+  }

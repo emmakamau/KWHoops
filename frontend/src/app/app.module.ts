@@ -23,6 +23,9 @@ import { ResetPasswordComponent } from './user-authentication/reset-password/res
 import { ResetPasswordFormComponent } from './user-authentication/reset-password-form/reset-password-form.component';
 import { LogoutComponent } from './user-authentication/logout/logout.component';
 
+import {AuthGuard} from "./guards/auth.guard";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,12 +43,12 @@ import { LogoutComponent } from './user-authentication/logout/logout.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'auth', component: UserAuthenticationComponent},
-      {path: 'workouts', component: WorkoutsComponent},
-      {path: 'yoga', component: YogaComponent},
-      {path: 'training', component: TrainingsComponent},
+      {path: 'workouts', component: WorkoutsComponent, canActivate: [AuthGuard],},
+      {path: 'yoga', component: YogaComponent, canActivate : [AuthGuard],},
+      {path: 'training', component: TrainingsComponent, canActivate: [AuthGuard],},
       {path: 'auth/reset-password', component: ResetPasswordComponent},
       {path: 'auth/reset-password-form', component: ResetPasswordFormComponent},
-      {path: 'logout', component: HomeComponent}
+      {path: 'logout', component: HomeComponent},
     ]),  
     HttpClientModule,
     FormsModule,

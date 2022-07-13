@@ -61,5 +61,10 @@ export class UserAuthenticationService {
       headers:headers
     })
   }
+
+  isLoggedIn(): boolean{
+    return !!localStorage.getItem("token")
+  }
+  
 }
 
