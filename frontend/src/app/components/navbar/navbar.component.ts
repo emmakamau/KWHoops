@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserAuthenticationService } from 'src/app/user-authentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   menuOpen: boolean = false;
+  isLoggedIn: any; 
 
-  constructor() {}
+  constructor(private service: UserAuthenticationService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoggedIn = this.service.isLoggedIn;
+  }
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen

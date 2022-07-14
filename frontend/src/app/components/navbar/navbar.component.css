@@ -8,6 +8,18 @@
   z-index: 190000;
 }
 
+.navbar-brand{
+  color: white;
+  font-family: 'Dancing Script', cursive;
+  font-size:2em;
+  font-weight: bolder;
+}
+
+.navbar-brand:hover{
+  color: white;
+  font-size:2.5em;
+  font-weight: bolder;
+}
 .nav-wrapper {
   display: flex;
   width: 100%;

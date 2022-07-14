@@ -27,10 +27,11 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.userAuthService.isLoggedIn()) {
+    if (this.userAuthService.isSubscribed()) {
       return true;
     } else {
-      this.router.navigate(['auth']);
+      this.router.navigate([' ']);
+      this.userAuthService.showFailureBar('Subscribe to view this page', 'OK')
       return false;
     }
   }

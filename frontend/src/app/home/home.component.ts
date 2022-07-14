@@ -34,8 +34,7 @@ export class HomeComponent implements OnInit {
         console.log(response)
         this.service.showSuccessBar('Subscription Successful', '')
         this.router.navigate(['training'])
-      }),
-      this.service.showFailureBar('User subscription active', 'OK')
+      })
     }
 
     handler.open({
@@ -52,7 +51,6 @@ export class HomeComponent implements OnInit {
       token: function (token: any) {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
-
         userSubscribe(token)
       }
     });
@@ -96,7 +94,6 @@ export class HomeComponent implements OnInit {
       let SubscriptionName = "Annual Subscription"
       let data = { "user_email": useremail, "sub_plan_name": SubscriptionName, "sub_payment_token": SubscriptionToken }
       this.service.userSubscription(data).subscribe(response => {
-        console.log(response)
         this.service.showSuccessBar('Subscription Successful', '')
         this.router.navigate(['training'])
       }),

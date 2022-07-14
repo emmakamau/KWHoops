@@ -70,6 +70,10 @@ export class UserAuthenticationService {
     })
   }
 
+  isSubscribed(): boolean{
+    return !!localStorage.getItem("sub_token")
+  }
+
   isLoggedIn(): boolean{
     return !!localStorage.getItem("token")
   }
