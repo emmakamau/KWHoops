@@ -9,13 +9,10 @@ import { UserAuthenticationService } from 'src/app/user-authentication.service';
 })
 export class NavbarComponent implements OnInit {
   menuOpen: boolean = false;
-  isLoggedIn: any; 
 
-  constructor(private service: UserAuthenticationService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.isLoggedIn = this.service.isLoggedIn;
-  }
+  ngOnInit(): void {}
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen
@@ -24,4 +21,13 @@ export class NavbarComponent implements OnInit {
   closeMenu(): void {
     this.menuOpen = false;
   }
+
+  loggedIn(){
+    localStorage.getItem('token')
+  }
+
+  loggedOut(){
+    localStorage.clear()
+  }
+
 }

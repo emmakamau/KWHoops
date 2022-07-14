@@ -23,11 +23,14 @@
           <a class="nav-link" style="color:white;" routerLink="yoga" routerLinkActive="active-link">Yoga</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color:white;" routerLink="auth" routerLinkActive="active-link">Login</a>
+          <a class="nav-link" style="color:white;"  routerLink="auth" routerLinkActive="active-link">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color:white;" routerLink="logout" routerLinkActive="active-link">Logout</a>
+          <button type="button" class="btn btn-dark" (click)="loggedOut()">Logout</button>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" style="color:white;" routerLink="logout" routerLinkActive="active-link">Logout</a>
+        </li> -->
       </ul>
     </div>
   </div>

@@ -48,7 +48,7 @@ import {AuthGuard} from "./guards/auth.guard";
       {path: 'training', component: TrainingsComponent, canActivate: [AuthGuard],},
       {path: 'auth/reset-password', component: ResetPasswordComponent},
       {path: 'auth/reset-password-form', component: ResetPasswordFormComponent},
-      {path: 'logout', component: HomeComponent},
+      // {path: 'logout', component: HomeComponent},
     ]),  
     HttpClientModule,
     FormsModule,
