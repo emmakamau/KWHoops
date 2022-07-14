@@ -20,6 +20,13 @@
   font-size:2.5em;
   font-weight: bolder;
 }
+
+.navbar-brand:focus{
+  color: white;
+  font-size:2em;
+  font-weight: bolder;
+}
+
 .nav-wrapper {
   display: flex;
   width: 100%;

@@ -9,11 +9,15 @@ import { Router } from '@angular/router';
   providers: [UserAuthenticationService]
 })
 export class HomeComponent implements OnInit {
-  constructor(private service: UserAuthenticationService,private router: Router) { }
+  constructor(private service: UserAuthenticationService, private router: Router) { }
 
   handler: any = null;
   ngOnInit() {
     this.loadStripe();
+  }
+
+  loggedIn(){
+    localStorage.getItem('token')
   }
 
   payFreeTrial(amount: any) {
@@ -25,7 +29,7 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    const userSubscribe = (token : any) => {
+    const userSubscribe = (token: any) => {
       let useremail = token.email
       let SubscriptionToken = token.id
       let SubscriptionName = "7 Day Trial"
@@ -37,11 +41,17 @@ export class HomeComponent implements OnInit {
       })
     }
 
-    handler.open({
-      name: 'KWHoops',
-      description: 'Free Subscription',
-      amount: amount * 100
-    });
+    if(localStorage.getItem('sub_token')){
+      this.service.showFailureBar('User already subscribed', 'OK')
+    }else if(localStorage.getItem('token')){
+      handler.open({
+        name:'KWHoops',
+        description:'Free Subscription',
+        amount: amount*100
+      })
+    }else{
+      this.service.showFailureBar('Login required', 'OK')
+    }
   }
 
   payMonthlyTrial(amount: any) {
@@ -55,7 +65,7 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    const userSubscribe = (token : any) => {
+    const userSubscribe = (token: any) => {
       let useremail = token.email
       let SubscriptionToken = token.id
       let SubscriptionName = "Monthly Subscription"
@@ -65,7 +75,7 @@ export class HomeComponent implements OnInit {
         this.service.showSuccessBar('Subscription Successful', '')
         this.router.navigate(['training'])
       }),
-      this.service.showFailureBar('User subscription active', 'OK')
+        this.service.showFailureBar('User subscription active', 'OK')
     }
 
     handler.open({
@@ -88,7 +98,7 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    const userSubscribe = (token : any) => {
+    const userSubscribe = (token: any) => {
       let useremail = token.email
       let SubscriptionToken = token.id
       let SubscriptionName = "Annual Subscription"
@@ -97,7 +107,7 @@ export class HomeComponent implements OnInit {
         this.service.showSuccessBar('Subscription Successful', '')
         this.router.navigate(['training'])
       }),
-      this.service.showFailureBar('User subscription active', 'OK')
+        this.service.showFailureBar('User subscription active', 'OK')
     }
 
     handler.open({
