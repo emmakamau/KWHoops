@@ -9,7 +9,7 @@
 }
 
 .navbar-brand{
-  color: white;
+  color: white !important;
   font-family: 'Dancing Script', cursive;
   font-size:2em;
   font-weight: bolder;
