@@ -29,24 +29,23 @@ export class UserAuthenticationComponent implements OnInit {
     // new loadExtJS();
     this.registrationForm = this.formBuilder.group({
       username: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required])
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required,Validators.minLength(6)])
     })
   }
 
-  userLogin() {
-    console.log(this.formGroup.value);
-    
+  userLogin() {    
     if (this.formGroup.valid) {
       this.service.loginUser(this.formGroup.value).subscribe(response => {
-        console.log(response);
         localStorage.setItem('token', response.token)
         localStorage.setItem('sub_token', response.sub_token)
         this.service.showSuccessBar('Login successful', 'OK')
         this.router.navigate(['/'])
+      },error =>{
+        this.service.showFailureBar('Email or password is incorrect','OK')
       })
     }else{
-      this.service.showFailureBar('Email or password is incorrect', 'OK') 
+      this.service.showFailureBar('Login fields cannot be empty', 'OK') 
     }
   }
 
@@ -58,9 +57,10 @@ export class UserAuthenticationComponent implements OnInit {
         if (this.regSuccess){
           btn.click()
         }
+        this.registrationForm.reset()
       })
     }else{
-      this.service.showFailureBar('A user with the same credentials already exists', 'Try Again')
+      this.service.showFailureBar('Registration fields cannot be empty', 'Try Again')
     }
   }
 

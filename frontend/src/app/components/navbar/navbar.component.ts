@@ -10,7 +10,7 @@ import { UserAuthenticationService } from 'src/app/user-authentication.service';
 export class NavbarComponent implements OnInit {
   menuOpen: boolean = false;
 
-  constructor() {}
+  constructor(public service: UserAuthenticationService) {}
 
   ngOnInit(): void {}
 
@@ -20,10 +20,6 @@ export class NavbarComponent implements OnInit {
 
   closeMenu(): void {
     this.menuOpen = false;
-  }
-
-  loggedIn(){
-    localStorage.getItem('token')
   }
 
   loggedOut(){

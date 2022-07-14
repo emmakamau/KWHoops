@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     this.loadStripe();
   }
 
-  loggedIn(){
+  loggedIn() {
     localStorage.getItem('token')
   }
 
@@ -30,26 +30,27 @@ export class HomeComponent implements OnInit {
     });
 
     const userSubscribe = (token: any) => {
+      localStorage.setItem('sub_token', token.id)
+
       let useremail = token.email
       let SubscriptionToken = token.id
       let SubscriptionName = "7 Day Trial"
       let data = { "user_email": useremail, "sub_plan_name": SubscriptionName, "sub_payment_token": SubscriptionToken }
       this.service.userSubscription(data).subscribe(response => {
-        console.log(response)
         this.service.showSuccessBar('Subscription Successful', '')
         this.router.navigate(['training'])
       })
     }
 
-    if(localStorage.getItem('sub_token')){
+    if (localStorage.getItem('sub_token')) {
       this.service.showFailureBar('User already subscribed', 'OK')
-    }else if(localStorage.getItem('token')){
+    } else if (localStorage.getItem('token')) {
       handler.open({
-        name:'KWHoops',
-        description:'Free Subscription',
-        amount: amount*100
+        name: 'KWHoops',
+        description: 'Free Subscription',
+        amount: amount * 100
       })
-    }else{
+    } else {
       this.service.showFailureBar('Login required', 'OK')
     }
   }
@@ -59,13 +60,13 @@ export class HomeComponent implements OnInit {
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
       locale: 'auto',
       token: function (token: any) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
         userSubscribe(token)
       }
     });
 
     const userSubscribe = (token: any) => {
+      localStorage.setItem('sub_token', token.id)
+
       let useremail = token.email
       let SubscriptionToken = token.id
       let SubscriptionName = "Monthly Subscription"
@@ -78,11 +79,17 @@ export class HomeComponent implements OnInit {
         this.service.showFailureBar('User subscription active', 'OK')
     }
 
-    handler.open({
-      name: 'KWHoops',
-      description: 'Monthly Subscription',
-      amount: amount * 100
-    });
+    if (localStorage.getItem('sub_token')) {
+      this.service.showFailureBar('User already subscribed', 'OK')
+    } else if (localStorage.getItem('token')) {
+      handler.open({
+        name: 'KWHoops',
+        description: 'Monthly Subscription',
+        amount: amount * 100
+      })
+    } else {
+      this.service.showFailureBar('Login required', 'OK')
+    }
 
   }
 
@@ -92,13 +99,13 @@ export class HomeComponent implements OnInit {
       key: 'pk_test_51HxRkiCumzEESdU2Z1FzfCVAJyiVHyHifo0GeCMAyzHPFme6v6ahYeYbQPpD9BvXbAacO2yFQ8ETlKjo4pkHSHSh00qKzqUVK9',
       locale: 'auto',
       token: function (token: any) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
         userSubscribe(token)
       }
     });
 
     const userSubscribe = (token: any) => {
+      localStorage.setItem('sub_token', token.id)
+
       let useremail = token.email
       let SubscriptionToken = token.id
       let SubscriptionName = "Annual Subscription"
@@ -106,15 +113,20 @@ export class HomeComponent implements OnInit {
       this.service.userSubscription(data).subscribe(response => {
         this.service.showSuccessBar('Subscription Successful', '')
         this.router.navigate(['training'])
-      }),
-        this.service.showFailureBar('User subscription active', 'OK')
+      })
     }
 
-    handler.open({
-      name: 'KWHoops',
-      description: 'Annual Subscription',
-      amount: amount * 100
-    });
+    if (localStorage.getItem('sub_token')) {
+      this.service.showFailureBar('User already subscribed', 'OK')
+    } else if (localStorage.getItem('token')) {
+      handler.open({
+        name: 'KWHoops',
+        description: 'Annual Subscription',
+        amount: amount * 100
+      })
+    } else {
+      this.service.showFailureBar('Login required', 'OK')
+    }
 
   }
 

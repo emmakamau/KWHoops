@@ -2,7 +2,7 @@
     <div class="form-container sign-up-container">
         <form action="#" [formGroup]="registrationForm!" (ngSubmit)="userRegistration(loginBtn)">
             <h1>Create Account</h1>
-            <input formControlName='username' type="text" placeholder="Username" />
+            <input formControlName='username' type="text" placeholder="Username" required />
             <input formControlName='email' type="email" placeholder="Email" />
             <input formControlName='password' type="password" placeholder="Password" />
             <button type="submit">Sign Up</button>
@@ -11,7 +11,7 @@
     <div class="form-container sign-in-container">
         <form action="#" [formGroup]="formGroup" (ngSubmit)="userLogin()">
             <h1>Sign in</h1>
-            <input formControlName="email" name="email" type="email" placeholder="Email" />
+            <input formControlName="email" name="email" type="email" placeholder="Email" required />
             <input formControlName="password" name="password" type="password" placeholder="Password" />
             <a routerLink="reset-password" routerLinkActive="active-link">Forgot your password?</a>
             <button type="submit">Sign In</button>
