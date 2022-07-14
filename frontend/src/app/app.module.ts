@@ -3,6 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DietComponent } from './diet/diet.component';
+import { BootcampsComponent } from './bootcamps/bootcamps.component';
+import { VeganComponent } from './vegan/vegan.component';
+import { VegeterianComponent } from './vegeterian/vegeterian.component';
+import { NonVegeterianComponent } from './non-vegeterian/non-vegeterian.component';
+import { ContactComponent } from './contact/contact.component';
 import { YogaComponent } from './yoga/yoga.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { RouterModule } from '@angular/router';
@@ -29,14 +35,22 @@ import {AuthGuard} from "./guards/auth.guard";
 @NgModule({
   declarations: [
     AppComponent,
+    BootcampsComponent,
+    DietComponent,
+    VeganComponent,
+    VegeterianComponent,
+    NonVegeterianComponent,
+    ContactComponent,
     YogaComponent,
     WorkoutsComponent,
-    SafePipe,   
+    SafePipe,  
     UserAuthenticationComponent, TrainingsComponent, HomeComponent, NavbarComponent, ResetPasswordComponent, ResetPasswordFormComponent, LogoutComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    BrowserModule,
+    HttpClientModule,
     AngularEmbedVideoModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
@@ -46,9 +60,9 @@ import {AuthGuard} from "./guards/auth.guard";
       {path: 'workouts', component: WorkoutsComponent, canActivate: [AuthGuard],},
       {path: 'yoga', component: YogaComponent, canActivate : [AuthGuard],},
       {path: 'training', component: TrainingsComponent, canActivate: [AuthGuard],},
-      {path: 'auth/reset-password', component: ResetPasswordComponent},
-      {path: 'auth/reset-password-form', component: ResetPasswordFormComponent},
-      // {path: 'logout', component: HomeComponent},
+      {path: 'contact', component: ContactComponent},
+      {path: 'diet', component: DietComponent},
+      {path: 'bootcamps', component: BootcampsComponent},
     ]),  
     HttpClientModule,
     FormsModule,

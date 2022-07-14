@@ -1,0 +1,29 @@
+body {
+    background-color: #FAF6F9;
+    font-family: 'Lato', sans-serif;
+}
+
+#header {
+    color: #E80000;
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 800;
+    text-align: center;
+}
+
+#veget-image {
+    width: 100%;
+    height: auto;
+    padding-top:20px;
+    padding-bottom: 20px;
+
+}
+
+#benefits-header {
+    color: #E80000;
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 500;
+    text-align: center;
+}
+

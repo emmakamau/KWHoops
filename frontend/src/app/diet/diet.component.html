@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Added title -->
+    <title>Healthy Diets</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lato&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Main header -->
+    <div class="container-fluid" id="diet-container" >
+        <h1 class="text-center" id="diet-header" >Healthy Diets</h1>
+
+        <!-- Create diet image -->
+        <div class="container-fluid">
+          <img id="diet-image" class="responsive" src ="./assets/images/eat-right-image-removebg-preview.png" alt=" image">
+        </div>
+
+        <!-- Introduction -->
+        <h1 id="paragraph-header" >Transforming your body with diet</h1>
+        <p class="paragraph-details" >Nutrition plays a central role in transforming your body - whether that's shedding fat or building muscle.</p>
+        <p class="paragraph-details" >When it comes to constructing a diet that will support your body transformation goals, optimise your performance in the gym, help your recovery and create the best conditions for fat loss and muscle growth, there are a number of key foods that we suggest to many of our clients.</p>
+        <p class="paragraph-details" > <em> <strong>Please check available diet plans below:-</strong></em></p>  
+    </div>
+
+    <!-- Dietary plans for different users -->
+    <hr>
+    <div class="container-fluid" id="plans-container">
+      <div class="container-fluid">
+        <h2 id="plans-header" class="text-center" >Diet Plans</h2>
+          <div class="row justify-content-center ">
+              <div class="column">
+                <div class="card" id="top-card" >
+                </div>
+                <div class="card">
+                  <h2>Vegetarian <br> Package</h2><br>
+                  <h3>7-Day Meal Plan</h3> 
+                  <a routerLink="/vegetarian"><h3>See More</h3></a>
+                </div>
+              </div>
+            
+              <div class="column">
+                <div class="card" id="top-card" >
+                </div>
+                <div class="card">
+                  <h2>Vegan <br> Package</h2><br>
+                  <h3>7-Day Meal Plan</h3> 
+                  <a  routerLink="/vegan"><h3>See More</h3></a>
+                </div>
+              </div>
+              
+              <div class="column">
+                <div class="card" id="top-card" >
+                </div>
+                <div class="card">
+                  <h2>Non-Vegetarian <br>Package</h2><br>
+                  <h3>7-Day Meal Plan</h3>
+                  <a routerLink="/non-vegetarian"><h3>See More</h3></a>
+                </div>
+              </div>
+      
+          </div> 
+      </div>
+    </div>    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
