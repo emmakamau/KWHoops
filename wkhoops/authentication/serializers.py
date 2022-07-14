@@ -28,7 +28,7 @@ class LoginSerializer(serializers.ModelSerializer):
         model = User
         fields = ('email', 'username', 'password', 'token')
 
-        read_only_fields = ['token']
+        read_only_fields = ['token', 'sub_token']
 
 class ResetPasswordEmailRequestSerializer(serializers.Serializer):
     email = serializers.EmailField(min_length=2)

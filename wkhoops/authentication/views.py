@@ -17,6 +17,7 @@ import os
 from django.http import HttpResponsePermanentRedirect
 from .models import User
 from django.http import HttpResponse
+from subscriptions.models import Subscription
 
 class AuthUserAPIView(GenericAPIView):
     
@@ -36,6 +37,7 @@ class RegisterAPIView(GenericAPIView):
     serializer_class = RegisterSerializer
     
     def post(self, request):
+        
         serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():
@@ -51,14 +53,21 @@ class LoginAPIView(GenericAPIView):
     serializer_class = LoginSerializer
     
     def post(self, request):
+        data = {}
         email = request.data.get('email', None)
         password = request.data.get('password', None)
-
         user = authenticate(username=email, password=password)
+
+        try:
+            sub_token = Subscription.objects.get(user_email=email).sub_payment_token
+        except:
+            sub_token = ""
 
         if user:
             serializer = self.serializer_class(user)
-            return response.Response(serializer.data, status=status.HTTP_200_OK)
+            new_serializer = {"sub_token":sub_token}
+            new_serializer.update(serializer.data)
+            return Response(new_serializer, status=status.HTTP_200_OK)
         return response.Response({'message': "Invalid credentials, try again"}, status=status.HTTP_401_UNAUTHORIZED)
 
 class RequestPasswordResetEmail(generics.GenericAPIView):

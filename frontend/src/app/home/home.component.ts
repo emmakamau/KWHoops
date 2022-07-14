@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserAuthenticationService } from 'src/app/user-authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,24 +9,12 @@ import { UserAuthenticationService } from 'src/app/user-authentication.service';
   providers: [UserAuthenticationService]
 })
 export class HomeComponent implements OnInit {
-  constructor(private service: UserAuthenticationService) { }
+  constructor(private service: UserAuthenticationService,private router: Router) { }
 
   handler: any = null;
   ngOnInit() {
     this.loadStripe();
   }
-
-  // userSubscribe(data:any): void{
-  //   if(data) {
-  //     let jsonData = JSON.stringify(data)
-  //     console.log(jsonData)
-  //     this.service.userSubscription(JSON.stringify(jsonData)).subscribe(response => {
-  //       console.log(response)
-  //       this.service.showSuccessBar('Subscription Successful', '')
-  //     })
-  //     this.service.showFailureBar('Unsuccessful, Please try again', 'OK')
-  //   }
-  // }
 
   payFreeTrial(amount: any) {
     var handler = (<any>window).StripeCheckout.configure({
@@ -35,29 +24,18 @@ export class HomeComponent implements OnInit {
         userSubscribe(token)
       }
     });
-    
-    // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
-        // let useremail = token.email
-        // let SubscriptionToken = token.id
-        // let SubscriptionName = "7 Day Trial"
-        // this.data = { "user_email": useremail, "sub_plan_name": SubscriptionName, "sub_payment_token": SubscriptionToken }
-        // //console.log(JSON.stringify(data))
-        // let jsonData = JSON.stringify(this.data)
-        // return jsonData
 
     const userSubscribe = (token : any) => {
       let useremail = token.email
       let SubscriptionToken = token.id
       let SubscriptionName = "7 Day Trial"
       let data = { "user_email": useremail, "sub_plan_name": SubscriptionName, "sub_payment_token": SubscriptionToken }
-      //let jsonData = JSON.stringify(data)
-      //console.log(jsonData)
       this.service.userSubscription(data).subscribe(response => {
         console.log(response)
         this.service.showSuccessBar('Subscription Successful', '')
+        this.router.navigate(['training'])
       }),
-      this.service.showFailureBar('Unsuccessful, Please try again', 'OK')
+      this.service.showFailureBar('User subscription active', 'OK')
     }
 
     handler.open({
@@ -75,9 +53,22 @@ export class HomeComponent implements OnInit {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
 
-        alert('Token Created!!');
+        userSubscribe(token)
       }
     });
+
+    const userSubscribe = (token : any) => {
+      let useremail = token.email
+      let SubscriptionToken = token.id
+      let SubscriptionName = "Monthly Subscription"
+      let data = { "user_email": useremail, "sub_plan_name": SubscriptionName, "sub_payment_token": SubscriptionToken }
+      this.service.userSubscription(data).subscribe(response => {
+        console.log(response)
+        this.service.showSuccessBar('Subscription Successful', '')
+        this.router.navigate(['training'])
+      }),
+      this.service.showFailureBar('User subscription active', 'OK')
+    }
 
     handler.open({
       name: 'KWHoops',
@@ -95,11 +86,22 @@ export class HomeComponent implements OnInit {
       token: function (token: any) {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
-        console.log(token)
-        console.log()
-        alert('Token Created!!');
+        userSubscribe(token)
       }
     });
+
+    const userSubscribe = (token : any) => {
+      let useremail = token.email
+      let SubscriptionToken = token.id
+      let SubscriptionName = "Annual Subscription"
+      let data = { "user_email": useremail, "sub_plan_name": SubscriptionName, "sub_payment_token": SubscriptionToken }
+      this.service.userSubscription(data).subscribe(response => {
+        console.log(response)
+        this.service.showSuccessBar('Subscription Successful', '')
+        this.router.navigate(['training'])
+      }),
+      this.service.showFailureBar('User subscription active', 'OK')
+    }
 
     handler.open({
       name: 'KWHoops',

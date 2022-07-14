@@ -33,7 +33,7 @@ class PlanSubscription(GenericAPIView):
         user = User.objects.get(email=user_email)
         request.data['user_id'] = user.id
         serializer = self.serializer_class(data=request.data)
-        print(serializer)
+
         if serializer.is_valid():
             serializer.save()
             return response.Response(serializer.data, status=status.HTTP_201_CREATED)
